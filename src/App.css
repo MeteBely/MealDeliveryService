@@ -6,3 +6,7 @@ html, body{
     box-sizing: border-box;
     font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 }
+
+.imageTxt{
+    transform: translate(-50%, -50%);
+}
