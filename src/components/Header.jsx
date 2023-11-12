@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <header className='w-full'>
-        <nav className='w-full'>
+        <nav className='w-full fixed z-50 bg-white'>
              <div className='navbar flex justify-evenly items-center w-full h-16 tracking-widest'>
                 <div className='navbarItemsOne flex flex-row gap-8 text-coolGray text-xs font-normal items-center'>
                     <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Blue_Apron_logo.svg/1280px-Blue_Apron_logo.svg.png" className='w-24 h-11 inline-block' /></a>
