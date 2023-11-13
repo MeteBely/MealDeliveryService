@@ -7,6 +7,58 @@ html, body{
     font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 }
 
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('../src/font/CeraPro-Medium.eot');
+    src: url('../src/font/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../src/font/CeraPro-Medium.woff2') format('woff2'),
+        url('../src/font/CeraPro-Medium.woff') format('woff'),
+        url('../src/font/CeraPro-Medium.ttf') format('truetype'),
+        url('../src/font/CeraPro-Medium.svg#CeraPro-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('../src/font/ChronicleDisplay-Bold.eot');
+    src: url('../src/font/ChronicleDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../src/font/ChronicleDisplay-Bold.woff2') format('woff2'),
+        url('../src/font/ChronicleDisplay-Bold.woff') format('woff'),
+        url('../src/font/ChronicleDisplay-Bold.ttf') format('truetype'),
+        url('../src/font/ChronicleDisplay-Bold.svg#ChronicleDisplay-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 .imageTxt{
     transform: translate(-50%, -50%);
+}
+
+.fontCera{
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-style: normal;
+}
+
+.fontChronicle {
+    font-family: 'Chronicle Display';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.appStoreLogo{
+    background-image: url("./assets/appStoreLogo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.playStoreLogo{
+    background-image: url("./assets/playStoreLogo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
