@@ -33,7 +33,7 @@ html, body{
     font-display: swap;
 }
 
-.imageTxt{
+.positionCenter{
     transform: translate(-50%, -50%);
 }
 
@@ -61,4 +61,8 @@ html, body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.card{
+    box-shadow: 0 2px 4px 0 #00000026;
 }
