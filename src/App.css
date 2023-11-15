@@ -37,6 +37,10 @@ html, body{
     transform: translate(-50%, -50%);
 }
 
+.positionCenterX{
+    transform: translate(0, -50%);
+}
+
 .fontCera{
     font-family: 'Cera Pro';
     font-weight: 500;
