@@ -14,7 +14,7 @@ const Header = () => {
                     <a href="" onClick={() => navigate('/')}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Blue_Apron_logo.svg/1280px-Blue_Apron_logo.svg.png" className='w-24 h-11 inline-block' /></a>
                     <a href="" onClick={() => navigate('/pricing')} className='hover:text-[#0f346c]'>PLANS</a>
                     <a href="" className='hover:text-[#0f346c]'>ON THE MENU</a>
-                    <a href="" className='hover:text-[#0f346c]'>MARKET</a>
+                    <a href="" onClick={() => navigate('/market')} className='hover:text-[#0f346c]'>MARKET</a>
                     <a href="" className='hover:text-[#0f346c]'>GIFT CARDS</a>
                     <a href="" className='hover:text-[#0f346c]'>BLOG</a>
                 </div>
