@@ -7,6 +7,7 @@ import Pricing from './components/Pricing'
 import Market from './components/Market'
 import MealKits from './components/MealKits'
 import SeasonalBoxes from './components/SeasonalBoxes'
+import GiftCards from './components/GiftCards'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
               <Route path='meal-kits' element={<MealKits/>}/>
             </Route>
         </Route>
+        <Route path='/gifts' element={<GiftCards/>}/>
         </Routes>
         <Footer/>
     </>
