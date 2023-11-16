@@ -15,7 +15,7 @@ const Header = () => {
                     <a href="" onClick={() => navigate('/pricing')} className='hover:text-[#0f346c]'>PLANS</a>
                     <a href="" className='hover:text-[#0f346c]'>ON THE MENU</a>
                     <a href="" onClick={() => navigate('/market')} className='hover:text-[#0f346c]'>MARKET</a>
-                    <a href="" className='hover:text-[#0f346c]'>GIFT CARDS</a>
+                    <a href="" onClick={() => navigate('/gifts')} className='hover:text-[#0f346c]'>GIFT CARDS</a>
                     <a href="" className='hover:text-[#0f346c]'>BLOG</a>
                 </div>
                 <div className='navbarItemsTwo flex flex-row gap-4 items-center text-coolGray tracking-widest'>
