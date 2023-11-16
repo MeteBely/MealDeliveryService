@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import whiteBlueApronIcon from '../assets/whiteBlueApronIcon.png'
-import YourGiftCart from './YourGiftCart'
 
 const GiftCards = () => {
 
