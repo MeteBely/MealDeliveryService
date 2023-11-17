@@ -84,3 +84,10 @@ html, body{
     background-color: #696D75;
     color: #ffffffe5;
 }
+
+.redeemDiv{
+    background-image: url("https://media.blueapron.com/assets/learn-more/homepage-hero-c0aa1f5417cb80adfae9725bfa4acf54a5fc53604add3ac801ddeb8e115aa58b.jpg");
+    background-position-y: 90px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
