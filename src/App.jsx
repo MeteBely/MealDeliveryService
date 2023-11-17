@@ -8,6 +8,7 @@ import Market from './components/Market'
 import MealKits from './components/MealKits'
 import SeasonalBoxes from './components/SeasonalBoxes'
 import GiftCards from './components/GiftCards'
+import Redeem from './components/Redeem'
 
 function App() {
 
@@ -26,6 +27,10 @@ function App() {
             </Route>
         </Route>
         <Route path='/gifts' element={<GiftCards/>}/>
+        <Route path='/pages'>
+              <Route index={true} element={<Outlet/>}/>
+              <Route path='redeem' element={<Redeem/>}/>
+        </Route>
         </Routes>
         <Footer/>
     </>
