@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import whiteBlueApronIcon from '../assets/whiteBlueApronIcon.png'
+import { Link } from 'react-router-dom'
 
 const GiftCards = () => {
 
     const [amount, setAmount] = useState(140)
     const [quantity, setQuantity] = useState(1)
+    const [sumQuantity, setSumQuantity] = useState(0)
     const [cart, setCart] = useState([])
 
     const inputChecked = () => {
@@ -37,23 +39,29 @@ const GiftCards = () => {
       },[])
 
       const handleCart = () => {
-        let flag = false
-        if(cart.length != 0){
-            cart.map((item,index) => {
-                if(item.amount == amount){
+        let flag = false;
+
+        if (cart.length !== 0) {
+            cart.map((item, index) => {
+                if (item.amount === amount) {
                     const updatedCart = [...cart];
-                    updatedCart[index] = { ...updatedCart[index], quantity: updatedCart[index].quantity + 1 };
-                    setCart(updatedCart)
-                    flag = true
-                }})
-                if(flag == false)
-                {
-                    setCart([...cart,{amount, quantity}])
+                    updatedCart[index] = { ...updatedCart[index], quantity: updatedCart[index].quantity + quantity };
+                    setCart(updatedCart);
+                    flag = true;
                 }
-        }else{
-            setCart([{amount, quantity}])
+            });
+
+            if (!flag) {
+                setCart([...cart, { amount, quantity }]);
+            }
+        } else {
+            setCart([{ amount, quantity }]);
         }
-      }
+    };
+
+    useEffect(() => {
+        totalQuantity();
+    }, [cart]);
 
       const handleRemove = (e,itemQuantity,index) => {
         e.preventDefault()
@@ -66,6 +74,18 @@ const GiftCards = () => {
             setCart(updatedCart.filter((item) => item.quantity != 1))
         }
       }
+      
+      const totalQuantity = () => {
+        let total = 0
+        if(cart.length != 0){
+            cart.map((item) => {
+                total += item.quantity
+            })
+            setSumQuantity(total)
+      }else{
+        setSumQuantity(0)
+    }
+    }
 
   return (
     <main>
@@ -117,7 +137,7 @@ const GiftCards = () => {
                         <span className='text-[#b2b5bd] text-[12px] pt-4 block text-center '>You haven't added any gifts yet</span>
                         </>) 
                         : (<>
-                        <span className='text-[#303235] text-[12px] font-semibold inline-block text-left '>YOUR CART ({quantity})</span>
+                        <span className='text-[#303235] text-[12px] font-semibold inline-block text-left '>YOUR CART ({sumQuantity})</span>
                         <span className='text-[#696d75] text-[12px] block pt-4'>MEAL GIFTS</span>
                         {cart.map((item, index) => {
                             return (
@@ -134,8 +154,8 @@ const GiftCards = () => {
             <div className='bottomItems w-[63%] m-auto block mt-8'>
                 <p className='mb-[15px] text-[13px] text-[#6a6d75] text-center'>E-Gift Cards are non-refundable (unless required by law). E-Gift Card may only be used for Meal Subscription or Market items. Your payment card will be charged at the time of purchase. Product and shipping restrictions may apply.</p>
                 <div className='text-[#0f346c] text-[14px] font-semibold text-center'>
-                    <div className='rounded-[5px] inline-block bg-white m-[10px] w-[250px] h-[60px] pt-[20px]'><a className='cursor-pointer hover:underline' href="">Need more than 50 gift cards?</a></div>
-                    <div className='rounded-[5px] inline-block bg-white m-[10px] w-[250px] h-[60px] pt-[20px]'><a className='cursor-pointer hover:underline' href="">Redeem your Blue Apron gift.</a></div>
+                    <div className='rounded-[5px] inline-block bg-white m-[10px] w-[250px] h-[60px] pt-[20px]'><Link className='cursor-pointer hover:underline' href="">Need more than 50 gift cards?</Link></div>
+                    <div className='rounded-[5px] inline-block bg-white m-[10px] w-[250px] h-[60px] pt-[20px]'><Link to='/pages/redeem' className='cursor-pointer hover:underline' href="">Redeem your Blue Apron gift.</Link></div>
                 </div>
             </div>
         </section>
