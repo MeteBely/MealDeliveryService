@@ -91,3 +91,7 @@ html, body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.CoSaFormInput{
+    box-shadow: 0 2px 2px rgba(0,0,0,0.05) inset;
+}
