@@ -9,6 +9,7 @@ import MealKits from './components/MealKits'
 import SeasonalBoxes from './components/SeasonalBoxes'
 import GiftCards from './components/GiftCards'
 import Redeem from './components/Redeem'
+import CorporateSales from './components/CorporateSales'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/pages'>
               <Route index={true} element={<Outlet/>}/>
               <Route path='redeem' element={<Redeem/>}/>
+              <Route path='corporate-sales' element={<CorporateSales/>}/>
         </Route>
         </Routes>
         <Footer/>
