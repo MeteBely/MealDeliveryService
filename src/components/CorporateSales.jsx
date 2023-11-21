@@ -2,6 +2,7 @@ import React from 'react'
 import {Form, Formik} from 'formik'
 import CustomInput from './FormComponents/CustomInput.jsx'
 import { advancedSchema } from '../Schemas/Index.jsx'
+import CustomSelect from './FormComponents/CustomSelect.jsx'
 
 const onSubmit= async(values, actions) =>{
     // console.log(values)
@@ -46,8 +47,13 @@ const CorporateSales = () => {
                     <h3 className='text-[20px] fontCera text-[#303236] mb-[14px]'>Enter order details</h3>
                 </div>
                 <div  className='flex flex-row gap-4'>
-                    <CustomInput label='2-PERSON PLAN' name='personPlan' type='text' placeholder='Kullanici adinizi giriniz'/>
-                    <CustomInput label='QUANTITY' name='quantity' type='text' placeholder='Kullanici adinizi giriniz'/>
+                    <CustomSelect label='2-PERSON PLAN' name='personPlan' placeholder='Kullanici adinizi giriniz'>
+                    <option value="">- select length -</option>
+                    <option value="oneWeek">1 week ($76.93)</option>
+                    <option value="twoWeek">2 week ($153.86)</option>
+                    <option value="threeWeek">4 week ($307.72)</option>
+                    </CustomSelect>
+                    <CustomInput label='QUANTITY' min={50} name='quantity' type='number' placeholder='Kullanici adinizi giriniz'/>
                 </div>
                 <div>
                     <CustomInput label='ADDITIONAL INFORMATION' name='additionalInformation' type='text' placeholder='Kullanici adinizi giriniz'/>
