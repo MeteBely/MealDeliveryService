@@ -24,7 +24,7 @@ const MiniDownHeader = () => {
           </a>
         </div>
     </div>
-    <Dialog open={dialogOpen}  sx={{backdropFilter: "blur(1px) sepia(1%)"}} PaperProps={{ sx: {borderRadius: "18px" }}} onClose={() => setDialogOpen(false)} className='rounded-[50px]'>
+    <Dialog open={dialogOpen}  sx={{backdropFilter: "blur(1px) sepia(1%)"}} PaperProps={{ sx: {borderRadius: "18px" }}} onClose={() => setDialogOpen(false)}>
       <div className='px-8 py-6 relative'>
         <DialogTitle><h3 className='text-[22px] text-[#303236] fontCera font-bold text-center'>Shipping included on all orders over $50</h3></DialogTitle>
         <DialogContent>
