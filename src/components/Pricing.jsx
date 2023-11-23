@@ -11,16 +11,49 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AiOutlineMinus } from 'react-icons/ai'
 import FrequentlyAskedQuestions from '../data/FrequentlyAskedQuestions.jsx'
+import { Dialog, DialogActions, DialogContentText, DialogContent, DialogTitle } from '@mui/material';
+import { useState } from 'react'
+import { AiFillCloseCircle } from "react-icons/ai";
 
 const Pricing = () => {
+
+  const [dialogOpen, setDialogOpen] = useState(false)
+  const handleDialog = (e) => {
+    e.preventDefault()
+    setDialogOpen(true)
+  }
+
   return (
     <main>
       <section className='mt-[60px] border-t-[1px] border-[#ECEEF2] pt-[25px] bg-coolGray-200 h-[950px]'>
+      <Dialog open={dialogOpen} sx={{backdropFilter: "blur(1px) sepia(1%)"}} fullWidth maxWidth="sm" onClose={() => setDialogOpen(false)}>
+      <div className='px-8 py-6 relative'>
+        <DialogContent>
+            <DialogContentText>
+              <div className='flex flex-row justify-center items-center fontCera mb-4 gap-[7px]'>
+                <div className='max-w-[100px] mt-[15px]'><img className='width-[20px] m-auto mb-1' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center leading-[1.14] block'>$45.00 Off + Free Shipping</span></div>
+                <div><img className='width-[20px] m-auto' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center '>$35.00 Off</span></div>
+                <div><img className='width-[20px] m-auto' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center '>$30.00 Off</span></div>
+                <div><img className='width-[20px] m-auto' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center '>$30.00 Off</span></div>
+                <div><img className='width-[20px] m-auto' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center '>$30.00 Off</span></div>
+                <div><img className='width-[20px] m-auto' src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className='text-[#696d75] text-[14px] text-center '>$30.00 Off</span></div>
+              </div>
+              <div className='text-[#303235] text-center fontCera font-bold mb-4 '>
+                Enjoy $200 off across 6 orders—plus, your first order ships free!
+              </div>
+              <p className='text-[#696d75] text-[12px] mt-2'>
+                Coupons will be automatically applied to your orders when your credit card is charged. Discount will be taken off of the price of the products and does not apply to shipping or tax, except where otherwise indicated. Redeeming this offer results in the purchase of a continuous subscription for which you will automatically receive weekly deliveries billed to your designated payment method until you cancel.
+              </p>
+            </DialogContentText>
+            <DialogActions><a className='changeColor absolute top-[20px] right-[25px] cursor-pointer' onClick={() => setDialogOpen(false)}><AiFillCloseCircle size={40} onMouseOver={({target})=>target.style.color="grey"} onMouseOut={({target})=>target.style.color="#ddd"} color='#ddd' /></a></DialogActions>
+        </DialogContent>
+        </div>
+       </Dialog>
         <div className='card w-[650px] m-auto bg-white rounded-[8px] flex flex-row items-center justify-evenly h-[80px] gap-[16px]'>
             <img src={ticketGreen} alt="" className='h-[28px]'/>
             <p className='fontCera font-semibold text-center text-[#303235] text-[14px]'>Enjoy $200 off across 6 orders—plus,<br />your first order ships free!</p>
             <button className='bg-[#00a979] hover:bg-[#1EB389] tracking-[1px] text-white text-[12px] fontCera w-[150px] rounded-[30px] h-[35px]'>REDEEM OFFER</button>
-            <button className=' text-[#00a979] tracking-[1px] text-[12px] fontCera'>OFFER DETAILS</button>
+            <button className=' text-[#00a979] tracking-[1px] text-[12px] fontCera' onClick={() => setDialogOpen(true)}>OFFER DETAILS</button>
         </div>
         <div className='text-center mt-8 mb-4'>
             <h1 className='fontChronicle text-[30px] text-[#303236]'>Personalize your meal kit</h1>
