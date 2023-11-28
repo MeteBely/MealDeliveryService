@@ -10,6 +10,7 @@ import SeasonalBoxes from './components/SeasonalBoxes'
 import GiftCards from './components/GiftCards'
 import Redeem from './components/Redeem'
 import CorporateSales from './components/CorporateSales'
+import LogIn from './components/LogIn'
 
 function App() {
 
@@ -33,6 +34,12 @@ function App() {
               <Route path='redeem' element={<Redeem/>}/>
               <Route path='corporate-sales' element={<CorporateSales/>}/>
         </Route>
+        <Route path='/users'>
+              <Route index={true} element={<Outlet/>}/>
+              <Route path='sign_in' element={<LogIn/>}/>
+        </Route>
+
+
         </Routes>
         <Footer/>
     </>
