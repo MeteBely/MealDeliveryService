@@ -10,5 +10,6 @@ export const advancedSchema=yup.object().shape({
     phoneNumber:yup.string().matches(phoneRegExp, 'Geçerli bir telefon numarasi giriniz').required("Telefon numarasi zorunludur"),
     personPlan:yup.string().oneOf(['oneWeek', 'twoWeek', 'threeWeek'],'Lütfen bir zaman dilimi seçiniz').required('Zaman dilimi zorunludur') ,
     quantity:yup.number().min(50,"Bu toplu aliş servisinden yararlanabilmek için minimum 50 servis sipariş etmelisiniz").required('Bu alan zorunludur'),
+    password:yup.string().required('Sifre zorunludur'),
     additionalInformation:yup.string()
 })
