@@ -19,7 +19,7 @@ const Header = () => {
                     <a href="" className='hover:text-[#0f346c]'>BLOG</a>
                 </div>
                 <div className='navbarItemsTwo flex flex-row gap-4 items-center text-coolGray tracking-widest'>
-                    <a href="" className='font-normal text-xs hover:text-[#0f346c]'>LOG IN</a>
+                    <a href="" onClick={() => navigate('/users/sign_in')} className='font-normal text-xs hover:text-[#0f346c]'>LOG IN</a>
                     <a href="" className='fontCera text-sm bg-orange-500 text-white w-28 h-10 text-center pt-2.5 rounded hover:bg-[#FF8142]'>SIGN UP</a>
                 </div>
              </div>
