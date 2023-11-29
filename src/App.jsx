@@ -11,6 +11,8 @@ import GiftCards from './components/GiftCards'
 import Redeem from './components/Redeem'
 import CorporateSales from './components/CorporateSales'
 import LogIn from './components/LogIn'
+import ForgotPassword from './components/ForgotPassword'
+import SignUp from './components/SignUp'
 
 function App() {
 
@@ -37,6 +39,11 @@ function App() {
         <Route path='/users'>
               <Route index={true} element={<Outlet/>}/>
               <Route path='sign_in' element={<LogIn/>}/>
+              <Route path='sign_up' element={<SignUp/>}/>
+              <Route path='password'>
+                <Route index={true} element={<Outlet/>}/>
+                <Route path='new' element={<ForgotPassword/>}/>
+              </Route>
         </Route>
 
 
