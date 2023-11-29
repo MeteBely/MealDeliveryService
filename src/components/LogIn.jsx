@@ -25,7 +25,7 @@ const LogIn = () => {
          <Form className='mb-2'>
             <CustomInput label='EMAIL' name='emailAddress' type='text' placeholder='Kullanici adinizi giriniz'/>
             <CustomInput label='PASSWORD' name='password' type='password' placeholder='Kullanici adinizi giriniz'/>
-            <div className='flex flex-row justify-between w-full'><div><input type="checkbox" name="" id="" /><span>Remember me?</span></div><a href="" className='text-[#0f346c] hover:underline text-[14px] fontCera'>Forgot Password?</a></div>
+            <div className='flex flex-row justify-between w-full text-[#b9b9c5]'><div><input className='align-middle mr-2 cursor-pointer' type="checkbox" name="" id="rememberAcc" /><label htmlFor='rememberAcc' className='text-[14px] fontCera cursor-pointer'>Remember Me?</label></div><a href="" className='text-[#0f346c] hover:underline text-[14px] fontCera'>Forgot Password?</a></div>
             <button type='submit' disabled={isSubmitting} className='text-[14px] w-full h-[47.88px] fontCera tracking-widest bg-[#235091] hover:bg-[#0F346C] text-[#fff] fontCera mt-4'>LOG IN</button>
          </Form>
        )}
