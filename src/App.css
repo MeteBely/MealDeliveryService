@@ -100,9 +100,21 @@ html, body{
     color: red;
 }
 
-/* .changeColor {
-    color: #ddd;
-  }
-  .changeColor:hover {
-    color: grey;
-  } */
+
+/** Kendi custom checkbox'ımı yapıyorum. */
+input[type="checkbox"]{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #b9b9c5;
+    border-radius: 2px;
+}
+
+input[type="checkbox"]:checked{
+    background: lightblue url(https://media.blueapron.com/assets/icons-s32e101f38c-188058d364c29a333c05953bf8d24a61c81b104ac42a5a53857fc2d368e42b20.png) no-repeat center;
+    background-position: 0 -212px;
+}
+
+input[type="checkbox"]:checked + label{
+    color: #0f346c;
+}
