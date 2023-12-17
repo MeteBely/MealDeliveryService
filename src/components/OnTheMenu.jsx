@@ -1,50 +1,13 @@
 import { useState } from 'react';
 import '../App.css';
 import Offer from './Offer';
+import WeekOfMonth from './WeekOfMonth';
+import { SignatureTwoServingFirstWeek, SignatureTwoServingSecondWeek, SignatureTwoServingThirdWeek, SignatureTwoServingFourthWeek } from '../data/onTheMenuDatas/SignatureTwoServing';
+import MonthlyMenuItem from './MonthlyMenuItem';
 
 const OnTheMenu = () => {
   const [subTxt, setSubTxt] = useState('Choose from an ever-changing mix of meat, fish, and health-conscious offerings.');
-  const handleButtonClick = (buttonIndex) => {
-    const Btn1 = document.getElementById('btnOne');
-    const Btn2 = document.getElementById('btnTwo');
-    const Btn3 = document.getElementById('btnThree');
-    const Btn4 = document.getElementById('btnFour');
-    const Btn5 = document.getElementById('btnFive');
-    if (buttonIndex === 0) {
-      Btn1.classList.add('activeBtn');
-      setSubTxt('Choose from an ever-changing mix of meat, fish, and health-conscious offerings.');
-    } else {
-      Btn1.classList.remove('activeBtn');
-    }
-
-    if (buttonIndex === 1) {
-      Btn2.classList.add('activeBtn');
-      setSubTxt('Meat-free dishes that celebrate the best of seasonal produce.');
-    } else {
-      Btn2.classList.remove('activeBtn');
-    }
-
-    if (buttonIndex === 2) {
-      Btn3.classList.add('activeBtn');
-      setSubTxt('Balanced, nutritionist-approved recipes designed for your holistic health.');
-    } else {
-      Btn3.classList.remove('activeBtn');
-    }
-
-    if (buttonIndex === 3) {
-      Btn4.classList.add('activeBtn');
-      setSubTxt('Recipes for families, get-togethers, or left-overs, with a variety of options that change weekly, including meat, fish and other health-conscious offerings.');
-    } else {
-      Btn4.classList.remove('activeBtn');
-    }
-
-    if (buttonIndex === 4) {
-      Btn5.classList.add('activeBtn');
-      setSubTxt('Complete your meal with appetizers and sides or add even more Blue Apron to your day with breakfast and dessert options.');
-    } else {
-      Btn5.classList.remove('activeBtn');
-    }
-  };
+  const [activeBtn, setActiveBtn] = useState('btnOne');
   return (
     <>
       <header className="mt-[60px] border-t border-t-gray-300">
@@ -57,38 +20,102 @@ const OnTheMenu = () => {
           <div className="h-[360px]">
             <h1 className="text-[#002c9b] fontChronicle text-[58px] pb-1 text-center mt-[55px]">Explore Our Meal Delivery Menus</h1>
             <div className="flex flex-row m-auto w-[920px] border-b border-b-[#002c9b] justify-between pt-4">
-              <button id="btnOne" className="flex flex-col justify-center items-center w-[15%] pb-[20px] activeBtn" onClick={() => handleButtonClick(0)}>
+              <button
+                onClick={() => {
+                  setActiveBtn('btnOne');
+                  setSubTxt('Choose from an ever-changing mix of meat, fish, and health-conscious offerings.');
+                }}
+                className={`flex flex-col justify-center items-center w-[15%] pb-[20px] ${activeBtn === 'btnOne' ? 'border-[#002c9b] border-b-[3px]' : ''}`}
+              >
                 <span className="fontCera text-[15px] font-semibold text-[#002c9b] tracking-[.27em]">2 SERVING</span>
                 <span className="pt-[12px]  text-[18px] fontChronicle text-[#002c9b]">Signature</span>
               </button>
-              <button id="btnTwo" className="flex flex-col justify-center items-center  w-[15%] pb-[20px]" onClick={() => handleButtonClick(1)}>
+              <button
+                onClick={() => {
+                  setActiveBtn('btnTwo');
+                  setSubTxt('Meat-free dishes that celebrate the best of seasonal produce.');
+                }}
+                className={`flex flex-col justify-center items-center w-[15%] pb-[20px] ${activeBtn === 'btnTwo' ? 'border-[#002c9b] border-b-[3px]' : ''}`}
+              >
                 <span className="fontCera text-[15px] font-semibold text-[#002c9b] tracking-[.27em]">2 SERVING</span>
                 <span className="pt-[12px] text-[18px] fontChronicle text-[#002c9b]">Vegetarian</span>
               </button>
-              <button id="btnThree" className="flex flex-col justify-center items-center w-[15%] pb-[20px]" onClick={() => handleButtonClick(2)}>
+              <button
+                onClick={() => {
+                  setActiveBtn('btnThree');
+                  setSubTxt('Balanced, nutritionist-approved recipes designed for your holistic health.');
+                }}
+                className={`flex flex-col justify-center items-center w-[15%] pb-[20px] ${activeBtn === 'btnThree' ? 'border-[#002c9b] border-b-[3px]' : ''}`}
+              >
                 <span className="fontCera text-[15px] font-semibold text-[#002c9b] tracking-[.27em]">2 SERVING</span>
                 <span className="pt-[12px] text-[18px] fontChronicle text-[#002c9b]">Wellness</span>
               </button>
-              <button id="btnFour" className="flex flex-col justify-center items-center w-[20%] pb-[20px]" onClick={() => handleButtonClick(3)}>
+              <button
+                onClick={() => {
+                  setActiveBtn('btnFour');
+                  setSubTxt('Recipes for families, get-togethers, or left-overs, with a variety of options that change weekly, including meat, fish and other health-conscious offerings.');
+                }}
+                className={`flex flex-col justify-center items-center w-[20%] pb-[20px] ${activeBtn === 'btnFour' ? 'border-[#002c9b] border-b-[3px]' : ''}`}
+              >
                 <span className="fontCera text-[15px] font-semibold text-[#002c9b] tracking-[.27em]">4 SERVING</span>
                 <span className="pt-[12px] text-[18px] fontChronicle text-[#002c9b]">Signature for Hour</span>
               </button>
-              <button id="btnFive" className="flex flex-col justify-center items-center w-[23%] pb-[20px]" onClick={() => handleButtonClick(4)}>
+              <button
+                onClick={() => {
+                  setActiveBtn('btnFive');
+                  setSubTxt('Complete your meal with appetizers and sides or add even more Blue Apron to your day with breakfast and dessert options.');
+                }}
+                className={`flex flex-col justify-center items-center w-[23%] pb-[20px] ${activeBtn === 'btnFive' ? 'border-[#002c9b] border-b-[3px]' : ''}`}
+              >
                 <span className="fontCera text-[15px] font-semibold text-[#002c9b] tracking-[.27em]">WEEKLY OPTIONS</span>
                 <span className="pt-[12px] text-[18px] fontChronicle text-[#002c9b]">Add-Ons</span>
               </button>
             </div>
             <p className="text-center fontCera text-[#002c9b] leading-[28px] w-[650px] h-[40px] m-auto mt-[20px] mb-[57px]">{subTxt}</p>
-            <div className="w-full flex flex-row justify-center items-center gap-[675px] selectMenuBox pb-[5px]">
-              <span className="tracking-[.27em] text-[#002c9b] text-[18px] fontCera font-semibold">WEEK OF DECEMBER 18TH</span>
-              <button className="fontCera text-[14px] rounded-[30px] h-[45px] px-[33px] w-[180px] bg-blue-700 text-white tracking-[2px] font-semibold">SEE PLANS</button>
-            </div>
+            <WeekOfMonth date="WEEK OF DECEMBER 25TH" />
           </div>
         </section>
-        <section className="mt-[200px]">
-          <div></div>
+        <section className="mt-[50px]">
+          <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
+            {SignatureTwoServingFirstWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            })}
+          </div>
+          <WeekOfMonth date="WEEK OF JANUARY 1ST" />
+        </section>
+        <section className="mt-[50px]">
+          <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
+            {SignatureTwoServingSecondWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            })}
+          </div>
+          <WeekOfMonth date="WEEK OF JANUARY 8TH" />
+        </section>
+        <section className="mt-[50px]">
+          <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
+            {SignatureTwoServingThirdWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            })}
+          </div>
+          <WeekOfMonth date="WEEK OF JANUARY 15TH" />
+        </section>
+        <section className="mt-[50px]">
+          <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
+            {SignatureTwoServingFourthWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            })}
+          </div>
         </section>
       </main>
+      <footer>
+        <div className="w-[600px] m-auto text-center">
+          <button className="text-white bg-[#f26c29] border border-[#f26c29] px-[33px] rounded-[2px] tracking-[2px] mb-2 fontCera h-[48px] text-[15px]">SEE PLANS</button>
+          <p className="mb-4 text-[#696d75] text-[18px] italic fontCera">Or…</p>
+          <p className="mb-[12px] text-[#696d75] text-[18px] italic fontCera">
+            Want to see all our recipes? Check out our <a className="text-[#002684]">Cookbook</a>.
+          </p>
+        </div>
+      </footer>
     </>
   );
 };
