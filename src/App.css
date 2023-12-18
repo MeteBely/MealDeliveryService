@@ -5,34 +5,22 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman",
-    "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular",
-    "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', 'HelveticaNeueRoman', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'TeXGyreHerosRegular', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
 }
 
 @font-face {
-  font-family: "Cera Pro";
-  src: url("../src/font/CeraPro-Medium.eot");
-  src: url("../src/font/CeraPro-Medium.eot?#iefix") format("embedded-opentype"),
-    url("../src/font/CeraPro-Medium.woff2") format("woff2"),
-    url("../src/font/CeraPro-Medium.woff") format("woff"),
-    url("../src/font/CeraPro-Medium.ttf") format("truetype"),
-    url("../src/font/CeraPro-Medium.svg#CeraPro-Medium") format("svg");
+  font-family: 'Cera Pro';
+  src: url('../src/font/CeraPro-Medium.eot');
+  src: url('../src/font/CeraPro-Medium.eot?#iefix') format('embedded-opentype'), url('../src/font/CeraPro-Medium.woff2') format('woff2'), url('../src/font/CeraPro-Medium.woff') format('woff'), url('../src/font/CeraPro-Medium.ttf') format('truetype'), url('../src/font/CeraPro-Medium.svg#CeraPro-Medium') format('svg');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Chronicle Display";
-  src: url("../src/font/ChronicleDisplay-Bold.eot");
-  src: url("../src/font/ChronicleDisplay-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../src/font/ChronicleDisplay-Bold.woff2") format("woff2"),
-    url("../src/font/ChronicleDisplay-Bold.woff") format("woff"),
-    url("../src/font/ChronicleDisplay-Bold.ttf") format("truetype"),
-    url("../src/font/ChronicleDisplay-Bold.svg#ChronicleDisplay-Bold")
-      format("svg");
+  font-family: 'Chronicle Display';
+  src: url('../src/font/ChronicleDisplay-Bold.eot');
+  src: url('../src/font/ChronicleDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('../src/font/ChronicleDisplay-Bold.woff2') format('woff2'), url('../src/font/ChronicleDisplay-Bold.woff') format('woff'), url('../src/font/ChronicleDisplay-Bold.ttf') format('truetype'), url('../src/font/ChronicleDisplay-Bold.svg#ChronicleDisplay-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -47,26 +35,26 @@ body {
 }
 
 .fontCera {
-  font-family: "Cera Pro";
+  font-family: 'Cera Pro';
   font-weight: 500;
   font-style: normal;
 }
 
 .fontChronicle {
-  font-family: "Chronicle Display";
+  font-family: 'Chronicle Display';
   font-weight: bold;
   font-style: normal;
 }
 
 .appStoreLogo {
-  background-image: url("./assets/appStoreLogo.svg");
+  background-image: url('./assets/appStoreLogo.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .playStoreLogo {
-  background-image: url("./assets/playStoreLogo.svg");
+  background-image: url('./assets/playStoreLogo.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,18 +68,8 @@ body {
   box-shadow: 0 16px 30px 0 #0003;
 }
 
-.activeLbl {
-  background-color: black;
-  color: white;
-}
-
-.radioLbl:not(.activeLbl):hover {
-  background-color: #696d75;
-  color: #ffffffe5;
-}
-
 .redeemDiv {
-  background-image: url("https://media.blueapron.com/assets/learn-more/homepage-hero-c0aa1f5417cb80adfae9725bfa4acf54a5fc53604add3ac801ddeb8e115aa58b.jpg");
+  background-image: url('https://media.blueapron.com/assets/learn-more/homepage-hero-c0aa1f5417cb80adfae9725bfa4acf54a5fc53604add3ac801ddeb8e115aa58b.jpg');
   background-position-y: 90px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -106,7 +84,7 @@ body {
 }
 
 /** Kendi custom checkbox'ımı yapıyorum. */
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -114,15 +92,13 @@ input[type="checkbox"] {
   border-radius: 2px;
 }
 
-input[type="checkbox"]:checked,
+input[type='checkbox']:checked,
 .tickDiv {
-  background: lightblue
-    url(https://media.blueapron.com/assets/icons-s32e101f38c-188058d364c29a333c05953bf8d24a61c81b104ac42a5a53857fc2d368e42b20.png)
-    no-repeat center;
+  background: lightblue url(https://media.blueapron.com/assets/icons-s32e101f38c-188058d364c29a333c05953bf8d24a61c81b104ac42a5a53857fc2d368e42b20.png) no-repeat center;
   background-position: 0 -212px;
 }
 
-input[type="checkbox"]:checked + label {
+input[type='checkbox']:checked + label {
   color: #0f346c;
 }
 
@@ -131,9 +107,19 @@ input[type="checkbox"]:checked + label {
   width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("https://media.blueapron.com/assets/signup/landing/background-landing-signup.jpg?quality=80&width=1440");
+  background-image: url('https://media.blueapron.com/assets/signup/landing/background-landing-signup.jpg?quality=80&width=1440');
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: 0 -267px;
   position: relative;
+}
+
+.selectMenuBox {
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+}
+
+.monthlyMenuBox {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  transition-property: box-shadow, border;
 }
