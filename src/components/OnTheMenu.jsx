@@ -1,13 +1,55 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import Offer from './Offer';
 import WeekOfMonth from './WeekOfMonth';
+import BuildYourPlan from './BuildYourPlan';
 import { SignatureTwoServingFirstWeek, SignatureTwoServingSecondWeek, SignatureTwoServingThirdWeek, SignatureTwoServingFourthWeek } from '../data/onTheMenuDatas/SignatureTwoServing';
+import { SignatureFourServingFirstWeek, SignatureFourServingSecondWeek, SignatureFourServingThirdWeek, SignatureFourServingFourthWeek } from '../data/onTheMenuDatas/SignatureForHourFourServing';
+import { AddOnsWeeklyOptionsFirstWeek, AddOnsWeeklyOptionsSecondWeek, AddOnsWeeklyOptionsThirdWeek, AddOnsWeeklyOptionsFourthWeek } from '../data/onTheMenuDatas/Add-OnsWeeklyOptions';
+import { VegetarianTwoServingFirstWeek, VegetarianTwoServingSecondWeek, VegetarianTwoServingThirdWeek, VegetarianTwoServingFourthWeek } from '../data/onTheMenuDatas/VegetarianTwoServing';
+import { WellnessTwoServingFirstWeek, WellnessTwoServingSecondWeek, WellnessTwoServingThirdWeek, WellnessTwoServingfourthWeek } from '../data/onTheMenuDatas/WellnessTwoServing';
 import MonthlyMenuItem from './MonthlyMenuItem';
 
 const OnTheMenu = () => {
   const [subTxt, setSubTxt] = useState('Choose from an ever-changing mix of meat, fish, and health-conscious offerings.');
   const [activeBtn, setActiveBtn] = useState('btnOne');
+  const [activeMenusFirstWeek, setActiveMenusFirstWeek] = useState(SignatureTwoServingFirstWeek);
+  const [activeMenusSecondWeek, setActiveMenusSecondWeek] = useState(SignatureTwoServingSecondWeek);
+  const [activeMenusThirdWeek, setActiveMenusThirdWeek] = useState(SignatureTwoServingThirdWeek);
+  const [activeMenusFourthWeek, setActiveMenusFourthWeek] = useState(SignatureTwoServingFourthWeek);
+  const updateActiveMenus = () => {
+    if (activeBtn === 'btnOne') {
+      setActiveMenusFirstWeek(SignatureTwoServingFirstWeek);
+      setActiveMenusSecondWeek(SignatureTwoServingSecondWeek);
+      setActiveMenusThirdWeek(SignatureTwoServingThirdWeek);
+      setActiveMenusFourthWeek(SignatureTwoServingFourthWeek);
+    } else if (activeBtn === 'btnTwo') {
+      setActiveMenusFirstWeek(VegetarianTwoServingFirstWeek);
+      setActiveMenusSecondWeek(VegetarianTwoServingSecondWeek);
+      setActiveMenusThirdWeek(VegetarianTwoServingThirdWeek);
+      setActiveMenusFourthWeek(VegetarianTwoServingFourthWeek);
+    } else if (activeBtn === 'btnThree') {
+      setActiveMenusFirstWeek(WellnessTwoServingFirstWeek);
+      setActiveMenusSecondWeek(WellnessTwoServingSecondWeek);
+      setActiveMenusThirdWeek(WellnessTwoServingThirdWeek);
+      setActiveMenusFourthWeek(WellnessTwoServingfourthWeek);
+    } else if (activeBtn === 'btnFour') {
+      setActiveMenusFirstWeek(SignatureFourServingFirstWeek);
+      setActiveMenusSecondWeek(SignatureFourServingSecondWeek);
+      setActiveMenusThirdWeek(SignatureFourServingThirdWeek);
+      setActiveMenusFourthWeek(SignatureFourServingFourthWeek);
+    } else if (activeBtn === 'btnFive') {
+      setActiveMenusFirstWeek(AddOnsWeeklyOptionsFirstWeek);
+      setActiveMenusSecondWeek(AddOnsWeeklyOptionsSecondWeek);
+      setActiveMenusThirdWeek(AddOnsWeeklyOptionsThirdWeek);
+      setActiveMenusFourthWeek(AddOnsWeeklyOptionsFourthWeek);
+    }
+  };
+
+  useEffect(() => {
+    updateActiveMenus();
+  }, [activeBtn]);
+
   return (
     <>
       <header className="mt-[60px] border-t border-t-gray-300">
@@ -77,32 +119,48 @@ const OnTheMenu = () => {
         </section>
         <section className="mt-[50px]">
           <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
-            {SignatureTwoServingFirstWeek.map((item, index) => {
-              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            {activeMenusFirstWeek.map((item, index) => {
+              if (activeMenusFirstWeek.length >= 6 && index == 6) {
+                return (
+                  <React.Fragment key={index}>
+                    <BuildYourPlan />
+                    <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} isVegetarian={item.isVegetarian} />
+                  </React.Fragment>
+                );
+              } else if (activeMenusFirstWeek.length < 6 && (index == 4 || index == 3 || index == 5)) {
+                return (
+                  <React.Fragment key={index}>
+                    <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} isVegetarian={item.isVegetarian} />
+                    <BuildYourPlan />
+                  </React.Fragment>
+                );
+              } else {
+                return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} isVegetarian={item.isVegetarian} key={index} />;
+              }
             })}
           </div>
           <WeekOfMonth date="WEEK OF JANUARY 1ST" />
         </section>
         <section className="mt-[50px]">
           <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
-            {SignatureTwoServingSecondWeek.map((item, index) => {
-              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            {activeMenusSecondWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} isVegetarian={item.isVegetarian} />;
             })}
           </div>
           <WeekOfMonth date="WEEK OF JANUARY 8TH" />
         </section>
         <section className="mt-[50px]">
           <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
-            {SignatureTwoServingThirdWeek.map((item, index) => {
-              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            {activeMenusThirdWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} isVegetarian={item.isVegetarian} />;
             })}
           </div>
           <WeekOfMonth date="WEEK OF JANUARY 15TH" />
         </section>
         <section className="mt-[50px]">
           <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
-            {SignatureTwoServingFourthWeek.map((item, index) => {
-              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} />;
+            {activeMenusFourthWeek.map((item, index) => {
+              return <MonthlyMenuItem menuImg={item.img} menuType={item.type} menuName={item.name} menuDetail={item.detail} menuTime={item.time} key={index} isVegetarian={item.isVegetarian} />;
             })}
           </div>
         </section>
