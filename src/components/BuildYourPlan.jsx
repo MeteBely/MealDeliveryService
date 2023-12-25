@@ -1,4 +1,20 @@
+import { useState } from 'react';
+
 const BuildYourPlan = () => {
+  const [activeMealPerWeekBtn, setActiveMealPerWeekBtn] = useState('twoMealBtn');
+  const [activeNumberOfServingBtn, setActiveNumberOfServingBtn] = useState('twoServingBtn');
+
+  const mealsPerWeekAfterHandling = () => {
+    if (activeMealPerWeekBtn === 'twoMealBtn') {
+      return 'after:absolute after:top-0 after:left-0 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["2"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'threeMealBtn') {
+      return 'after:absolute after:top-0 after:left-1/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["3"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'fourMealBtn') {
+      return 'after:absolute after:top-0 after:left-2/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["4"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'fiveMealBtn') {
+      return 'after:absolute after:top-0 after:left-3/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["5"] after:transition-[left] after:duration-150 after:ease-linear';
+    }
+  };
   return (
     <div className="w-[781px] m-auto border border-[#d3d5db]  px-[20px] pb-4 rounded-[8px] flex flex-row items-center justify-between h-[250px] my-12">
       <div className="w-[45%]">
@@ -18,12 +34,22 @@ const BuildYourPlan = () => {
       <div className="flex flex-col items-end justify-center w-[50%] gap-4 h-[225px] relative">
         <div className="flex flex-row items-start justify-center gap-[34px]">
           <div className="my-auto fontCera text-[18px] text-[#6a6d75] pb-[5px]">Number of servings</div>
-          <ul className="flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center">
+          <ul
+            className={`relative flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center ${
+              activeNumberOfServingBtn === 'twoServingBtn'
+                ? 'after:absolute after:top-0 after:left-0 after:w-1/2 after:h-full after:bg-[#002684] after:whitespace-nowrap after:rounded-[45%] after:text-white after:fontCera after:text-[18px] after:text-center after:pt-[7px] after:content-["2"] after:transition-[left] after:duration-100 after:ease-linear'
+                : 'after:absolute after:top-0 after:left-1/2 after:w-1/2 after:h-full after:bg-[#002684] after:whitespace-nowrap after:rounded-[45%] after:text-white after:fontCera after:text-[18px] after:text-center after:pt-[7px] after:content-["4"] after:transition-[left] after:duration-100 after:ease-linear'
+            }`}
+          >
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">2</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveNumberOfServingBtn('twoServingBtn')}>
+                2
+              </button>
             </li>
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">4</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveNumberOfServingBtn('fourServingBtn')}>
+                4
+              </button>
             </li>
           </ul>
         </div>
@@ -33,18 +59,26 @@ const BuildYourPlan = () => {
             <br />
             week
           </div>
-          <ul className="flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center">
+          <ul className={`relative flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center ${mealsPerWeekAfterHandling()}`}>
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">2</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('twoMealBtn')}>
+                2
+              </button>
             </li>
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">3</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('threeMealBtn')}>
+                3
+              </button>
             </li>
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">4</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('fourMealBtn')}>
+                4
+              </button>
             </li>
             <li className="my-auto min-w-[46px] inline-block">
-              <button className="text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full">5</button>
+              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('fiveMealBtn')}>
+                5
+              </button>
             </li>
           </ul>
         </div>
