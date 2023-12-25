@@ -10,8 +10,24 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { AiOutlineMinus } from 'react-icons/ai';
 import FrequentlyAskedQuestions from '../data/FrequentlyAskedQuestions.jsx';
 import Offer from './Offer.jsx';
+import { useState } from 'react';
 
 const Pricing = () => {
+  const [activeMealPerWeekBtn, setActiveMealPerWeekBtn] = useState('twoMealBtn');
+  const [activeNumberOfServingBtn, setActiveNumberOfServingBtn] = useState('twoServingBtn');
+
+  const mealsPerWeekAfterHandling = () => {
+    if (activeMealPerWeekBtn === 'twoMealBtn') {
+      return 'after:absolute after:top-0 after:left-0 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[22px] rounded-sm after:text-center after:fontCera after:text-white after:pt-[2px] after:content-["2"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'threeMealBtn') {
+      return 'after:absolute after:top-0 after:left-1/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[22px]  rounded-sm after:text-center after:fontCera after:text-white after:pt-[2px] after:content-["3"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'fourMealBtn') {
+      return 'after:absolute after:top-0 after:left-2/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[22px] rounded-sm after:text-center after:fontCera after:text-white after:pt-[2px] after:content-["4"] after:transition-[left] after:duration-150 after:ease-linear';
+    } else if (activeMealPerWeekBtn === 'fiveMealBtn') {
+      return 'after:absolute after:top-0 after:left-3/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[22px] rounded-sm after:text-center after:fontCera after:text-white after:pt-[2px] after:content-["5"] after:transition-[left] after:duration-150 after:ease-linear';
+    }
+  };
+
   return (
     <main>
       <section className="mt-[60px] border-t-[1px] border-[#ECEEF2] pt-[25px] bg-coolGray-200 h-[950px]">
@@ -21,42 +37,60 @@ const Pricing = () => {
           <p className="fontCera text-[18px] text-[#6a6d75]">Get excited—your choice of 70+ weekly meals is just a few steps away.</p>
         </div>
         <div className="bg-white m-auto w-[1075px] h-[680px] flex flex-row justify-evenly items-start gap-12 fontCera">
-          <div className="colOneDiv flex flex-col justify-center items-center mt-10 gap-4">
+          <div className="colOneDiv flex flex-col justify-center items-center mt-10 gap-4 pl-12">
             <h2 className="text-[22px] font-semibold text-[#303236]">1. Choose your preferences</h2>
             {MealPreferences.map((preferences, index) => {
-              return <PreferencesBox key={index} preferences={preferences} />;
+              return <PreferencesBox key={index} title={preferences.title} description={preferences.description} img={preferences.img} />;
             })}
             <p className="text-[13px] leading-[18px] text-[#6a6d75]">
               Choose as many as you like. These help us make meal <br /> recommendations and personalize your experience.
             </p>
           </div>
-          <div className="colTwoDiv flex flex-col justify-center items-center mt-10 gap-8 border-l-[1px] border-[#d3d6cd] pl-[90px] h-5/6 pb-16">
+          <div className="colTwoDiv flex flex-col justify-center items-center mt-10 gap-8 border-l-[1px] border-[#d3d6cd] pl-[70px] h-5/6 pb-16 pr-12">
             <h2 className="text-[22px] font-semibold text-[#303236]">2. Select your plan</h2>
             <div className="flex flex-row gap-[40px]">
               <p className="text-[18px] text-[#303235] text-center">Servings per meal</p>
-              <ul className="flex flex-row">
+              <ul
+                className={`relative flex flex-row ${
+                  activeNumberOfServingBtn === 'twoServingBtn'
+                    ? 'after:absolute after:top-0 after:left-0 after:w-1/2 after:h-full after:bg-[#002684] after:whitespace-nowrap after:text-[22px] rounded-sm after:text-white after:fontCera  after:text-center after:pt-[2px] after:content-["2"] after:transition-[left] after:duration-100 after:ease-linear'
+                    : 'after:absolute after:top-0 after:left-1/2 after:w-1/2 after:h-full after:bg-[#002684] after:whitespace-nowrap after:text-[22px] rounded-sm after:text-white after:fontCera after:text-center after:pt-[2px] after:content-["4"] after:transition-[left] after:duration-100 after:ease-linear'
+                }`}
+              >
                 <li>
-                  <button className="border border-[#d3d6cd] w-[100px] h-[38px] text-[#002684] text-[22px] rounded-sm">2</button>
+                  <button className="border border-[#d3d6cd] w-[100px] h-[38px] text-[#002684] text-[22px] rounded-sm" onClick={() => setActiveNumberOfServingBtn('twoServingBtn')}>
+                    2
+                  </button>
                 </li>
                 <li>
-                  <button className="border border-[#d3d6cd] w-[100px] h-[38px] text-[#002684] text-[22px]">4</button>
+                  <button className="border border-[#d3d6cd] w-[100px] h-[38px] text-[#002684] text-[22px]" onClick={() => setActiveNumberOfServingBtn('fourServingBtn')}>
+                    4
+                  </button>
                 </li>
               </ul>
             </div>
             <div className="flex flex-row gap-[60px]">
               <p className="text-[18px] text-[#303235] text-center">Meals per week</p>
-              <ul className="flex flex-row">
+              <ul className={`relative flex flex-row ${mealsPerWeekAfterHandling()}`}>
                 <li>
-                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm">2</button>
+                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm" onClick={() => setActiveMealPerWeekBtn('twoMealBtn')}>
+                    2
+                  </button>
                 </li>
                 <li>
-                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm">3</button>
+                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm" onClick={() => setActiveMealPerWeekBtn('threeMealBtn')}>
+                    3
+                  </button>
                 </li>
                 <li>
-                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm">4</button>
+                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm" onClick={() => setActiveMealPerWeekBtn('fourMealBtn')}>
+                    4
+                  </button>
                 </li>
                 <li>
-                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm">5</button>
+                  <button className="border border-[#d3d6cd] w-[50px] h-[38px] text-[#002684] text-[22px] rounded-sm" onClick={() => setActiveMealPerWeekBtn('fiveMealBtn')}>
+                    5
+                  </button>
                 </li>
               </ul>
             </div>
@@ -81,7 +115,7 @@ const Pricing = () => {
               </div>
             </div>
             <div>
-              <button className="bg-[#00a0df] text-white tracking-[2px] text-[13px] w-[150px] h-[40px] rounded-[20px]">CONTINUE</button>
+              <button className="bg-[#00a0df] text-white tracking-[2px] text-[13px] w-[150px] h-[40px] rounded-[20px] hover:bg-[#5CBFE6]">CONTINUE</button>
             </div>
             <div>
               <p className="text-[15px] text-[#6a6d75]">
