@@ -134,6 +134,7 @@ export const SignatureTwoServingSecondWeek = [
     name: 'Three Cheese Lasagna',
     detail: 'with Pesto & Spinach',
     time: '25',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/42612/centered_main_dish_images/1700496348-47-0003-3998/1225_2P12_Ribeye-Steak-Mushroom-Cream-Sauce_1487_Web.jpg?quality=80&width=800',
@@ -148,6 +149,7 @@ export const SignatureTwoServingSecondWeek = [
     name: 'Fried Feta & Kale Salad',
     detail: 'with Pear & Roasted Sweet Potato',
     time: '40',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44051/centered_main_dish_images/1700583728-48-0033-2187/1225_2P8_Pork-Chop-Pear-Pan-Sauce_1278_Web.jpg?quality=80&width=800',
@@ -183,6 +185,7 @@ export const SignatureTwoServingSecondWeek = [
     name: 'Crispy Prosciutto & Lemon-Pesto Pasta',
     detail: 'with Broccoli & Parmesan',
     time: '35',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44080/centered_main_dish_images/1700499065-46-0040-6825/0527_2PV2_Totra_0048_CropRight_Web.jpg?quality=80&width=800',
@@ -190,6 +193,7 @@ export const SignatureTwoServingSecondWeek = [
     name: 'Avocado & Poblano Tortas',
     detail: 'with Carrot-Radish Slaw',
     time: '45',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44086/centered_main_dish_images/1700583903-48-0038-4301/0517_2P9_Salmon-Couscous065_Web.jpg?quality=80&width=800',
@@ -204,6 +208,7 @@ export const SignatureTwoServingSecondWeek = [
     name: 'Peanut Lentil Curry',
     detail: 'with Fried Eggs & Garlic Naan',
     time: '45',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44100/centered_main_dish_images/1700497215-47-0012-6252/0802_2PP_Chicken-Balsamic-Pan-Sauce_085_Web.jpg?quality=80&width=800',

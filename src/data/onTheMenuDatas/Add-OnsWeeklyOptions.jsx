@@ -135,6 +135,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Rosemary White Bean Soup',
     detail: 'with Spinach, Onions & Garlic Bread',
     time: '30',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44085/centered_main_dish_images/1700502028-48-0054-7299/1219_ADD03_Spiced-Date-Cake_399_Web.jpg?quality=80&width=800',
@@ -149,6 +150,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Spinach Artichoke Dip',
     detail: 'with Veggies & Toasted Baguettes',
     time: '35',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44288/centered_main_dish_images/1700501775-46-0057-6921/1219_ADD05_Sage-Biscuits_374_Web.jpg?quality=80&width=800',
@@ -163,6 +165,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Pear & Walnut Salad',
     detail: 'with Brown Butter-Dijon Vinaigrette',
     time: '15',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44292/centered_main_dish_images/1700502109-48-0058-8685/1225_ADD04_Blueberry-French-Toast_1616_Web.jpg?quality=80&width=800',
@@ -170,6 +173,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Overnight Blueberry French Toast',
     detail: 'with Almonds & Maple Syrup',
     time: '70',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44329/centered_main_dish_images/1700498717-48-0027-6965/Chicken-Pieces_Cooked_Plate_Protein_Add-on_010_Web.jpg?quality=80&width=800',
@@ -212,6 +216,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Cheesy Truffle Cavatappi',
     detail: 'with Mushrooms & Kale',
     time: '5',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44393/centered_main_dish_images/1700588619-48-0094-1649/R6_H_E_YakisobaNoodles_horiz.jpg?quality=80&width=800',
@@ -233,6 +238,7 @@ export const AddOnsWeeklyOptionsSecondWeek = [
     name: 'Roasted Red Pepper Pasta',
     detail: 'with Mozzarella & Parmesan',
     time: '5',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44396/centered_main_dish_images/1700588316-48-0093-4489/H_E_CheesyChickenPasta_horiz.jpg?quality=80&width=800',

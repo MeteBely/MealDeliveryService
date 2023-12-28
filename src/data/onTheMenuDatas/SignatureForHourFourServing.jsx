@@ -118,6 +118,7 @@ export const SignatureFourServingSecondWeek = [
     name: 'Three Cheese Lasagna',
     detail: 'with Pesto & Spinach',
     time: '25',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44054/centered_main_dish_images/1700508834-47-0002-2461/1016_FPM_Italian-Meatloaf27623_Web.jpg?quality=80&width=800',
@@ -146,6 +147,7 @@ export const SignatureFourServingSecondWeek = [
     name: 'Goat Cheese & Mushroom Quiche',
     detail: 'with Roasted Brussels Sprouts',
     time: '50',
+    isVegetarian: true,
   },
   {
     img: 'https://media.blueapron.com/recipes/44103/centered_main_dish_images/1700587104-48-0045-5716/1225_FP15_Southwest-Cheesy-Baked-Chicken_1418_Web.jpg?quality=80&width=800',
@@ -202,6 +204,7 @@ export const SignatureFourServingSecondWeek = [
     name: 'Creamy Romesco Pasta',
     detail: 'with Veggies & Almond Breadcrumbs',
     time: '25',
+    isVegetarian: true,
   },
 ];
 
