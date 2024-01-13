@@ -1,17 +1,13 @@
-import React from 'react';
 import { Form, Formik } from 'formik';
-import CustomInput from './FormComponents/CustomInput.jsx';
+import CustomInput from '../components/FormComponents/CustomInput.jsx';
 import { advancedSchema } from '../Schemas/Index.jsx';
 import { FaApple } from 'react-icons/fa6';
 import { FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const onSubmit = async (values, actions) => {
-  // console.log(values)
-  // console.log(actions)
-
   await new Promise((resolve) => {
-    setTimeout(resolve, 1000); //Promise 1 saniye beklettiği için isSubmitting 1 saniye boyunca true, sonra false döner.
+    setTimeout(resolve, 1000);
   }),
     actions.resetForm();
 };
@@ -57,7 +53,7 @@ const LogIn = () => {
           </button>
         </div>
         <div className="text-center text-[14px] fontCera text-[#6a6d75] mt-6">
-          Don't have an account?{' '}
+          Don`t have an account?{' '}
           <Link to="/users/sign_up" href="" className="text-[#0f346c] underline">
             Sign Up
           </Link>

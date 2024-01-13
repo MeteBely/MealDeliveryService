@@ -1,19 +1,19 @@
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Home from './components/Home';
+import Home from './pages/Home';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import Pricing from './components/Pricing';
-import Market from './components/Market';
-import MealKits from './components/MealKits';
-import SeasonalBoxes from './components/SeasonalBoxes';
-import GiftCards from './components/GiftCards';
-import Redeem from './components/Redeem';
-import CorporateSales from './components/CorporateSales';
-import LogIn from './components/LogIn';
-import ForgotPassword from './components/ForgotPassword';
-import SignUp from './components/SignUp';
-import OnTheMenu from './components/OnTheMenu';
+import Pricing from './pages/Pricing';
+import Market from './pages/Market';
+import MealKits from './pages/MealKits';
+import SeasonalBoxes from './pages/SeasonalBoxes';
+import GiftCards from './pages/GiftCards';
+import Redeem from './pages/Redeem';
+import CorporateSales from './pages/CorporateSales';
+import LogIn from './pages/LogIn';
+import ForgotPassword from './pages/ForgotPassword';
+import SignUp from './pages/SignUp';
+import OnTheMenu from './pages/OnTheMenu';
 
 function App() {
   return (
