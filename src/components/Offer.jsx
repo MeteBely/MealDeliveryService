@@ -6,6 +6,19 @@ import { useState } from 'react';
 
 const Offer = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const divImagePrice = (price) => {
+    const divs = [];
+
+    for (let i = 0; i < 4; i++) {
+      divs.push(
+        <div key={i}>
+          <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" />
+          <span className="text-[#696d75] text-[14px] text-center ">${price.toFixed(2)} Off</span>
+        </div>
+      );
+    }
+    return divs;
+  };
   return (
     <section>
       <Dialog open={dialogOpen} sx={{ backdropFilter: 'blur(1px) sepia(1%)' }} fullWidth maxWidth="sm" onClose={() => setDialogOpen(false)}>
@@ -19,18 +32,7 @@ const Offer = () => {
                 <div>
                   <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className="text-[#696d75] text-[14px] text-center ">$35.00 Off</span>
                 </div>
-                <div>
-                  <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className="text-[#696d75] text-[14px] text-center ">$30.00 Off</span>
-                </div>
-                <div>
-                  <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className="text-[#696d75] text-[14px] text-center ">$30.00 Off</span>
-                </div>
-                <div>
-                  <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className="text-[#696d75] text-[14px] text-center ">$30.00 Off</span>
-                </div>
-                <div>
-                  <img className="width-[20px] m-auto" src="https://myba-media.blueapron.com/registration/assets/dd2dc30c1691d727e18d4a1ad65afeb9cbf48c52/images/svg/couponBox.svg" alt="" /> <span className="text-[#696d75] text-[14px] text-center ">$30.00 Off</span>
-                </div>
+                {divImagePrice(30)}
               </div>
               <div className="text-[#303235] text-center fontCera font-bold mb-4 ">Enjoy $200 off across 6 orders—plus, your first order ships free!</div>
               <p className="text-[#696d75] text-[12px] mt-2">Coupons will be automatically applied to your orders when your credit card is charged. Discount will be taken off of the price of the products and does not apply to shipping or tax, except where otherwise indicated. Redeeming this offer results in the purchase of a continuous subscription for which you will automatically receive weekly deliveries billed to your designated payment method until you cancel.</p>

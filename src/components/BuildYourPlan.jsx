@@ -1,20 +1,22 @@
 import { useState } from 'react';
-
+import { SelectedMealBtn } from '../utils/SelectedMealBtn';
+import { generateMealButtons } from '../utils/GenerateMealButtons';
 const BuildYourPlan = () => {
   const [activeMealPerWeekBtn, setActiveMealPerWeekBtn] = useState('twoMealBtn');
   const [activeNumberOfServingBtn, setActiveNumberOfServingBtn] = useState('twoServingBtn');
 
   const mealsPerWeekAfterHandling = () => {
     if (activeMealPerWeekBtn === 'twoMealBtn') {
-      return 'after:absolute after:top-0 after:left-0 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["2"] after:transition-[left] after:duration-150 after:ease-linear';
+      return SelectedMealBtn('0', '2');
     } else if (activeMealPerWeekBtn === 'threeMealBtn') {
-      return 'after:absolute after:top-0 after:left-1/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["3"] after:transition-[left] after:duration-150 after:ease-linear';
+      return SelectedMealBtn('1/4', '3');
     } else if (activeMealPerWeekBtn === 'fourMealBtn') {
-      return 'after:absolute after:top-0 after:left-2/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["4"] after:transition-[left] after:duration-150 after:ease-linear';
+      return SelectedMealBtn('2/4', '4');
     } else if (activeMealPerWeekBtn === 'fiveMealBtn') {
-      return 'after:absolute after:top-0 after:left-3/4 after:w-1/4 after:h-full after:bg-[#002684] after:tracking-[2px] after:whitespace-nowrap after:text-[18px] after:text-center after:fontCera after:rounded-[45%] after:text-white after:pt-[7px] after:content-["5"] after:transition-[left] after:duration-150 after:ease-linear';
+      return SelectedMealBtn('3/4', '5');
     }
   };
+
   return (
     <div className="w-[781px] m-auto border border-[#d3d5db]  px-[20px] pb-4 rounded-[8px] flex flex-row items-center justify-between h-[250px] my-12">
       <div className="w-[45%]">
@@ -59,28 +61,7 @@ const BuildYourPlan = () => {
             <br />
             week
           </div>
-          <ul className={`relative flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center ${mealsPerWeekAfterHandling()}`}>
-            <li className="my-auto min-w-[46px] inline-block">
-              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('twoMealBtn')}>
-                2
-              </button>
-            </li>
-            <li className="my-auto min-w-[46px] inline-block">
-              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('threeMealBtn')}>
-                3
-              </button>
-            </li>
-            <li className="my-auto min-w-[46px] inline-block">
-              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('fourMealBtn')}>
-                4
-              </button>
-            </li>
-            <li className="my-auto min-w-[46px] inline-block">
-              <button className={`text-[#002684] text-[19px] fontCera my-auto tracking-[2px] whitespace-nowrap w-full`} onClick={() => setActiveMealPerWeekBtn('fiveMealBtn')}>
-                5
-              </button>
-            </li>
-          </ul>
+          <ul className={`relative flex flex-row h-[38px] rounded-[58px] bg-[#f8f9fa] overflow-visible justify-center items-center ${mealsPerWeekAfterHandling()}`}>{generateMealButtons(setActiveMealPerWeekBtn)}</ul>
         </div>
         <div className="mt-12">
           <button className="absolute bottom-[12px] right-0 w-[200px] tracking-[2px] min-w-[128px] bg-[#00a0df]  rounded-[30px] text-[15px] h-[46px] fontCera text-center text-white hover:bg-[#5CBFE6]">CONTINUE</button>

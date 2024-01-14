@@ -21,19 +21,19 @@ const MarketSlider = () => {
         <Slider {...settings} className="text-center">
           <div className=" bg-[#E6EFFE] relative h-[450px] w-[500px] rounded-[32px]">
             <div className="absolute top-1/2 positionCenterX ml-10">
-              <h2 className="mb-[10px] text-[#002c9b] fontChronicle text-[30px]">Seasonal Boxes</h2>
+              <h2 className="mb-[10px] text-[#002c9b] fontChronicle text-[30px]">
+                Ready to Cook Meal <br /> Kit
+              </h2>
               <p className="mb-[10px] text-left text-[#303236] fontCera text-[18px] leading-6">
-                Limited-time boxes featuring
-                <br />
-                seasonal menus and
-                <br />
-                entertaining extras.
+                Featuring pre-chopped <br />
+                ingredients and a recyclable <br /> baking tin, our Ready to Cook <br /> recipes make prep and cleaning <br /> a breeze. Just assemble, bake,
+                <br /> and enjoy!
               </p>
               <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white rounded-[22.5px] text-[14px] fontCera tracking-widest h-[45px] w-[150px]">
                 ORDER NOW
               </button>
             </div>
-            <img className="w-[672px] h-full absolute top-0 right-0 rounded-[32px]" src="https://media.blueapron.com/hero_images/151/1698709249-48-0033-9512/Additional_Roast-OBO_656.jpg?width=800" />
+            <img className="w-[672px] h-full absolute top-0 right-0 rounded-[32px]" src="https://media.blueapron.com/hero_images/152/1703696003-48-0001-6663/570c18ff-b565-4f17-a0dc-196b979fe1ae.jpg?width=800" />
           </div>
           <div className=" bg-[#E6EFFE] relative h-[450px] w-[500px] rounded-[32px]">
             <div className="absolute top-1/2 positionCenterX ml-16">

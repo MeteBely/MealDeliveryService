@@ -4,11 +4,8 @@ import { advancedSchema } from '../Schemas/Index.jsx';
 import CustomSelect from '../components/FormComponents/CustomSelect.jsx';
 
 const onSubmit = async (values, actions) => {
-  // console.log(values)
-  // console.log(actions)
-
   await new Promise((resolve) => {
-    setTimeout(resolve, 1000); //Promise 1 saniye beklettiği için isSubmitting 1 saniye boyunca true, sonra false döner.
+    setTimeout(resolve, 1000);
   }),
     actions.resetForm();
 };
