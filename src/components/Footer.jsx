@@ -4,49 +4,54 @@ import { BsFacebook } from 'react-icons/bs';
 import { BsPinterest } from 'react-icons/bs';
 import { AiFillYoutube } from 'react-icons/ai';
 import '../App.css';
+import { useState } from 'react';
 
 const Footer = () => {
+  const [iconUp, setIconUp] = useState('');
+  const handleIconUp = (link) => {
+    setIconUp(link);
+  };
   return (
     <footer>
       <section className="upFooter bg-[#fafbfc] border-t-[1px] border-[#ECEEF2] pb-8">
-        <div className="upFooterDiv flex flex-row justify-center items-center gap-10 fontCera">
+        <div className="upFooterDiv flex flex-row justify-center items-start gap-10 fontCera">
           <div>
-            <h3 className="text-[#303236] text-[14px] text-center tracking-widest">FOLLOW US</h3>
-            <ul className="flex flex-row gap-8 justify-center items-center mt-8">
-              <li>
+            <h3 className="text-[#303236] text-[14px] text-center tracking-widest mt-[30px] mb-4">FOLLOW US</h3>
+            <ul className="flex flex-row  min-[700px]:gap-8 min-[530px]:gap-4 gap-2 justify-center items-center">
+              <li onMouseEnter={() => handleIconUp('instagram')} onMouseLeave={() => handleIconUp('')} className="w-[40px] h-[40px]">
                 <a href="https://www.instagram.com/blueapron/">
-                  <AiOutlineInstagram className="w-[34px] h-[34px] text-[#6a6d75]" />
+                  <AiOutlineInstagram className={`text-[#6a6d75] transition-all duration-200 ${iconUp === 'instagram' ? '-translate-y-2' : ' '}`} color={`${iconUp === 'instagram' ? `#D5307A` : ''}`} size={34} />
                 </a>
               </li>
-              <li>
+              <li onMouseEnter={() => handleIconUp('tiktok')} onMouseLeave={() => handleIconUp('')} className="w-[34px] h-[34px]">
                 <a href="https://www.tiktok.com/@blueapron?lang=en">
-                  <BsTiktok className="w-[28px] h-[28px] text-[#6a6d75]" />
+                  <BsTiktok className={`text-[#6a6d75] transition-all duration-200 ${iconUp === 'tiktok' ? '-translate-y-2' : ' '}`} color={`${iconUp === 'tiktok' ? '#000' : ''}`} size={28} />
                 </a>
               </li>
-              <li>
+              <li onMouseEnter={() => handleIconUp('facebook')} onMouseLeave={() => handleIconUp('')} className="w-[34px] h-[34px]">
                 <a href="https://www.facebook.com/BlueApron/">
-                  <BsFacebook className="w-[28px] h-[28px] text-[#6a6d75]" />
+                  <BsFacebook className={`text-[#6a6d75] transition-all duration-200 ${iconUp === 'facebook' ? '-translate-y-2' : ' '}`} color={`${iconUp === 'facebook' ? `#257BF2` : ''}`} size={28} />
                 </a>
               </li>
-              <li>
+              <li onMouseEnter={() => handleIconUp('pinterest')} onMouseLeave={() => handleIconUp('')} className="w-[34px] h-[34px]">
                 <a href="https://tr.pinterest.com/blueapron/">
-                  <BsPinterest className="w-[28px] h-[28px] text-[#6a6d75]" />
+                  <BsPinterest className={`text-[#6a6d75] transition-all duration-200 ${iconUp === 'pinterest' ? '-translate-y-2' : ' '}`} color={`${iconUp === 'pinterest' ? `#BE2026` : ''}`} size={28} />
                 </a>
               </li>
-              <li>
+              <li onMouseEnter={() => handleIconUp('youtube')} onMouseLeave={() => handleIconUp('')} className="w-[41px] h-[41px]">
                 <a href="https://www.youtube.com/@Blueapron">
-                  <AiFillYoutube className="w-[35px] h-[35px] text-[#6a6d75]" />
+                  <AiFillYoutube className={`text-[#6a6d75] transition-all duration-200 ${iconUp === 'youtube' ? '-translate-y-2' : ' '}`} color={`${iconUp === 'youtube' ? 'red' : ''}`} size={36} />
                 </a>
               </li>
             </ul>
           </div>
-          <div className="border-r-[1px] border-l-[1px] border-[#e4e6eb] px-[120px] text-center text-[#6a6d75] mt-[30px]">
+          <div className="min-[1212px]:border-r-[1px] min-[1212px]:border-l-[1px] border-[#e4e6eb] min-[1212px]:px-[120px] text-center text-[#6a6d75] mt-[30px]">
             <h3 className="text-[#303236] text-[14px] tracking-widest mb-4">DISCOVER WHAT'S COOKIN'</h3>
-            <input type="email" placeholder="Email Address" className="text-[#6a6d75] h-[42px] mb-4 w-[275px] px-[15px] py-[10px] text-[14px] rounded-l-[4px] border focus:outline-none" />
-            <button className="bg-[#245091] pb-[2px] hover:bg-[#0f346c] text-white h-[42px] w-[50px] rounded-r-[4px]">GO</button>
-            <p className="text-[14px]">Sign up for offers, recipes, news & more</p>
+            <input type="email" placeholder="Email Address" className="text-[#6a6d75] h-[42px] mb-4 w-[185px] min-[700px]:w-[275px] px-[15px] py-[10px] text-[14px] rounded-l-[4px] border focus:outline-none" />
+            <button className="bg-[#245091] pb-[2px] hover:bg-[#0f346c] text-white h-[42px] w-[40px] min-[700px]:w-[50px] rounded-r-[4px]">GO</button>
+            <p className="text-[12px] min-[700px]:text-[14px]">Sign up for offers, recipes, news & more</p>
           </div>
-          <div>
+          <div className="hidden min-[1212px]:block">
             <h3 className="text-[#303236] text-[14px] text-center tracking-widest mt-[34px] mb-4 hover:underline">
               <a href="">FROM THE BLOG</a>
             </h3>
@@ -62,8 +67,8 @@ const Footer = () => {
         </div>
       </section>
 
-      <section className="downFooter bg-[#0f346c] h-[425px]">
-        <div className="downFooterDiv flex flex-row justify-evenly items-center pt-12 text-[#a1bce6] text-[14px] fontCera">
+      <section className="downFooter bg-[#0f346c] h-auto">
+        <div className="downFooterDiv flex flex-row min-[900px]:justify-evenly justify-center items-start pt-12 text-[#a1bce6] text-[14px] fontCera px-2">
           <div className="firstCol flex flex-row gap-12 justify-center items-start">
             <ul className="flex flex-col justify-center items-start gap-3 mr-6">
               <li>
@@ -108,8 +113,50 @@ const Footer = () => {
                   Cookbook
                 </a>
               </li>
+              <ul className="max-[899px]:flex flex-col justify-center items-start gap-3 hidden">
+                <li>
+                  <a className="hover:underline" href="">
+                    Suppliers
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="https://signup.cj.com/member/signup/publisher/?cid=5446852">
+                    Affiliates
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="">
+                    Supply Chains Act
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="https://blog.blueapron.com/foodsafety/">
+                    Food Safety
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="">
+                    Press
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="">
+                    Our Team
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="https://investors.blueapron.com/">
+                    Investor Relations
+                  </a>
+                </li>
+              </ul>
             </ul>
-            <ul className="flex flex-col justify-center items-start gap-3">
+            <ul className="min-[900px]:flex flex-col justify-center items-start gap-3 hidden">
               <li>
                 <a className="hover:underline" href="">
                   Suppliers
@@ -187,8 +234,28 @@ const Footer = () => {
                   First Responders
                 </a>
               </li>
+              <ul className="max-[899px]:flex flex-col justify-center items-start gap-3 hidden">
+                <li>
+                  <span className="text-white">Customer Support:</span>
+                </li>
+                <li>
+                  <a className="hover:underline" href="https://support.blueapron.com/hc/en-us">
+                    Help Center & FAQ
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="">
+                    contact@blueapron.com
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:underline" href="tel:+16468914349">
+                    (646) 891-4349
+                  </a>
+                </li>
+              </ul>
             </ul>
-            <ul className="flex flex-col justify-center items-start gap-3">
+            <ul className="min-[900px]:flex flex-col justify-center items-start gap-3 hidden">
               <li>
                 <span className="text-white">Customer Support:</span>
               </li>
@@ -213,12 +280,12 @@ const Footer = () => {
             <li>
               <span className="text-white">© Blue Apron, LLC 2023</span>
             </li>
-            <li>
+            <li className=" text-right">
               <a className="hover:underline" href="">
                 Do Not Sell or Share My Info
               </a>
             </li>
-            <li>
+            <li className="text-right">
               <a className="hover:underline" href="">
                 Notice to California Residents
               </a>
@@ -250,13 +317,15 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <p className="text-white fontCera mt-[16px] text-[14px] ml-[355px] inline-block">
-          If you are using a screen reader and are having problems using this website, please call{' '}
-          <a className="text-[#a1bce6] hover:underline" href="tel:+18444628299">
-            1-844-462-8299
-          </a>{' '}
-          for assistance.
-        </p>
+        <div>
+          <p className="text-white fontCera mt-[12px] md:mt-[16px] text-[12px] md:text-[14px] mx-auto w-4/5 text-center">
+            If you are using a screen reader and are having problems using this website, please call{' '}
+            <a className="text-[#a1bce6] hover:underline" href="tel:+18444628299">
+              1-844-462-8299
+            </a>{' '}
+            for assistance.
+          </p>
+        </div>
       </section>
     </footer>
   );
