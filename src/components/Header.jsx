@@ -5,12 +5,13 @@ import { useState } from 'react';
 
 const Header = () => {
   const navigate = useNavigate();
-  const [topPos, setTopPos] = useState(`[-400%]`);
+  const [topPos, setTopPos] = useState('top-[-800px]');
   const bringItems = () => {
-    if (topPos === '[-400%]') {
-      setTopPos('[58px]');
+    console.log(topPos);
+    if (topPos === 'top-[-800px]') {
+      setTopPos('top-[58px]');
     } else {
-      setTopPos('[-400%]');
+      setTopPos('top-[-800px]');
     }
   };
   return (
@@ -28,14 +29,14 @@ const Header = () => {
                 <IoMenu size={50} color={`#06316C`} />
               </button>
             </div>
-            <div className={`navbarItemsOne w-36 md:w-auto duration-300 flex flex-col rounded-lg bg-white p-4 absolute top-${topPos} left-[-45px] md:static md:flex-row gap-8 text-coolGray text-xs font-normal items-center`}>
+            <div className={`navbarItemsOne transition-all w-36 md:w-auto duration-300 flex flex-col rounded-lg bg-white p-4 absolute ${topPos} left-[-45px] md:static md:flex-row gap-8 text-coolGray text-xs font-normal items-center`}>
               <a href="" onClick={() => navigate('/pricing')} className="hover:text-[#0f346c]">
                 PLANS
               </a>
               <a href="" onClick={() => navigate('/on-the-menu')} className="hover:text-[#0f346c] min-w-[102px]">
                 ON THE MENU
               </a>
-              <a href="" onClick={() => navigate('/market')} className="hover:text-[#0f346c]">
+              <a href="" onClick={() => navigate('/market')} className="hover:text-[#0f346c] ">
                 MARKET
               </a>
               <a href="" onClick={() => navigate('/gifts')} className="hover:text-[#0f346c]">
