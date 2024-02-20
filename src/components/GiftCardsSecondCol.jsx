@@ -34,7 +34,7 @@ const GiftCardsSecondCol = ({ setAmount, quantity, setQuantity, cart, amount, se
       </fieldset>
       <fieldset className="mb-8">
         <legend className="text-[#303235] text-[11px] mb-2 font-semibold ">GIFT AMOUNT</legend>
-        <label className={`${activeLbl === 'lblOneActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block rounded-l-[5px] transition-all duration-700`} htmlFor="giftAmountOne">
+        <label className={`${activeLbl === 'lblOneActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block rounded-l-[5px] min-[1200px]:block min-[1200px]:rounded-none min-[1200px]:mb-2 min-[1350px]:inline-block min-[1350px]:rounded-l-[5px] transition-all duration-700`} htmlFor="giftAmountOne">
           $70
         </label>
         <input
@@ -48,7 +48,7 @@ const GiftCardsSecondCol = ({ setAmount, quantity, setQuantity, cart, amount, se
             setAmount(70);
           }}
         />
-        <label className={`${activeLbl === 'lblTwoActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block transition-all duration-700`} htmlFor="giftAmountTwo">
+        <label className={`${activeLbl === 'lblTwoActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block min-[1200px]:block min-[1200px]:mb-2 min-[1350px]:inline-block transition-all duration-700`} htmlFor="giftAmountTwo">
           $140
         </label>
         <input
@@ -63,7 +63,7 @@ const GiftCardsSecondCol = ({ setAmount, quantity, setQuantity, cart, amount, se
             setAmount(140);
           }}
         />
-        <label className={`${activeLbl === 'lblThreeActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block rounded-r-[5px] transition-all duration-700`} htmlFor="giftAmountThree">
+        <label className={`${activeLbl === 'lblThreeActive' ? 'bg-black text-white' : 'hover:bg-[#696d75] hover:text-[#ffffffe5]'} radioLbl w-[63px] text-[12px] cursor-pointer pt-2 tracking-widest border-[#b2b5bd] border h-[38px] text-center inline-block rounded-r-[5px] min-[1200px]:block min-[1200px]:mb-2 min-[1200px]:rounded-none  min-[1350px]:inline-block min-[1350px]:rounded-r-[5px] transition-all duration-700`} htmlFor="giftAmountThree">
           $280
         </label>
         <input

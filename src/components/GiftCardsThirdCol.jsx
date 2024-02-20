@@ -28,8 +28,8 @@ const GiftCardsThirdCol = ({ sumQuantity, cart, setCart }) => {
                 <div key={index}>
                   <div className="text-[#696d75] text-[12px] pt-4 w-full relative">
                     <span>${item.amount} Meal Gift Card</span>
-                    <a onClick={(e) => handleRemove(e, item.quantity, index)} href="" className="absolute right-[10px] hover:underline">
-                      Remove
+                    <a onClick={(e) => handleRemove(e, item.quantity, index)} href="" className="absolute top-[42px] right-[4px] hover:underline text-red-500">
+                      Decrease
                     </a>
                   </div>
                   <span className="text-[#696d75] text-[12px] block pt-2 mb-4">Quantity: {item.quantity}</span>
