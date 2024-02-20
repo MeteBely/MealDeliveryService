@@ -16,7 +16,7 @@ const SelectPlan = () => {
     }
   };
   return (
-    <div className="colTwoDiv flex flex-col justify-center items-center mt-10 gap-8 border-l-[1px] border-[#d3d6cd] pl-[70px] h-5/6 pb-16 pr-12">
+    <div className="colTwoDiv flex flex-col justify-center items-center mt-10 gap-8 min-[1100px]:border-l-[1px] border-[#d3d6cd] pl-[70px] h-5/6  min-[1100px]:pb-16  min-[1100px]:pr-12">
       <h2 className="text-[22px] font-semibold text-[#303236]">2. Select your plan</h2>
       <div className="flex flex-row gap-[40px]">
         <p className="text-[18px] text-[#303235] text-center">Servings per meal</p>

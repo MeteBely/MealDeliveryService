@@ -3,7 +3,7 @@ import PreferencesBox from '../components/PreferencesBox.jsx';
 
 const ChoosePreferences = () => {
   return (
-    <div className="colOneDiv flex flex-col justify-center items-center mt-10 gap-4 pl-12">
+    <div className="colOneDiv flex flex-col justify-center items-center  min-[1100px]:mt-10 gap-4  min-[1100px]:pl-12">
       <h2 className="text-[22px] font-semibold text-[#303236]">1. Choose your preferences</h2>
       {MealPreferences.map((preferences, index) => {
         return <PreferencesBox key={index} title={preferences.title} description={preferences.description} img={preferences.img} imgBlue={preferences.imgBlue} />;
