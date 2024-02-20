@@ -45,7 +45,7 @@ const Offer = () => {
           </DialogContent>
         </div>
       </Dialog>
-      <div className="card w-[650px] m-auto bg-white rounded-[8px] flex flex-row items-center justify-evenly h-[80px] gap-[16px]">
+      <div className="card w-[480px] min-[690px]:w-[650px] m-auto bg-white rounded-[8px] flex flex-row items-center justify-evenly h-[80px] gap-[16px]">
         <img src={ticketGreen} alt="" className="h-[28px]" />
         <p className="fontCera font-semibold text-center text-[#303235] text-[14px]">
           Enjoy $200 off across 6 orders—plus,
