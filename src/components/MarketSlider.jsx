@@ -10,54 +10,50 @@ const MarketSlider = () => {
     autoplaySpeed: 3000,
     autoplay: true,
     centerMode: true,
-    centerPadding: '450px',
+    centerPadding: '0',
     arrows: false,
   };
 
   const navigate = useNavigate();
   return (
-    <section className="mt-[60px] pt-[25px] h-[550px]">
-      <div className="m-auto block">
-        <Slider {...settings} className="text-center">
-          <div className=" bg-[#E6EFFE] relative h-[450px] w-[500px] rounded-[32px]">
-            <div className="absolute top-1/2 positionCenterX ml-10">
-              <h2 className="mb-[10px] text-[#002c9b] fontChronicle text-[30px]">
-                Ready to Cook Meal <br /> Kit
-              </h2>
-              <p className="mb-[10px] text-left text-[#303236] fontCera text-[18px] leading-6">
-                Featuring pre-chopped <br />
-                ingredients and a recyclable <br /> baking tin, our Ready to Cook <br /> recipes make prep and cleaning <br /> a breeze. Just assemble, bake,
-                <br /> and enjoy!
-              </p>
-              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white rounded-[22.5px] text-[14px] fontCera tracking-widest h-[45px] w-[150px]">
+    <section className="mb-8 bg-[#AED3E4] h-auto w-[100%]">
+      <div className="w-[400px] min-[953px]:w-[55%] min-[1240px]:w-[850px] m-auto p-8">
+        <Slider {...settings}>
+          <div className=" bg-[#E6EFFE] h-auto rounded-[32px]">
+            <div className="ml-2">
+              <h2 className="text-[#002c9b] fontChronicle text-[24px] min-[953px]:text-[30px] h-[55px] min-[953px]:h-[75px] flex items-center justify-center">Ready to Cook Meal Kit</h2>
+              <p className="mb-[10px] text-left text-[#303236] fontCera text-[14px] min-[953px]:text-[18px] leading-6 h-[60px]">Featuring pre-chopped ingredients and a recyclable baking tin, our Ready to Cook recipes make prep and cleaning a breeze.</p>
+              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white mb-2 rounded-[22.5px] text-[10px] min-[953px]:text-[14px] fontCera tracking-widest h-[30px] w-[100px] min-[953px]:h-[45px] min-[953px]:w-[150px]">
                 ORDER NOW
               </button>
             </div>
-            <img className="w-[672px] h-full absolute top-0 right-0 rounded-[32px]" src="https://media.blueapron.com/hero_images/152/1703696003-48-0001-6663/570c18ff-b565-4f17-a0dc-196b979fe1ae.jpg?width=800" />
+            <div className="">
+              <img className="w-[800px] h-full rounded-[32px] m-auto object-cover" src="https://media.blueapron.com/hero_images/152/1703696003-48-0001-6663/570c18ff-b565-4f17-a0dc-196b979fe1ae.jpg?width=800" />
+            </div>
           </div>
-          <div className=" bg-[#E6EFFE] relative h-[450px] w-[500px] rounded-[32px]">
-            <div className="absolute top-1/2 positionCenterX ml-16">
-              <h2 className="mb-[10px] text-[#002c9b] fontChronicle text-[30px]">Shop Meal Kits</h2>
-              <p className="mb-[10px] text-left text-[#303236] fontCera text-[18px]">No subscription needed.</p>
-              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white rounded-[22.5px] text-[14px] fontCera tracking-widest h-[45px] w-[150px]">
+          <div className=" bg-[#E6EFFE] h-auto w-[500px] rounded-[32px]">
+            <div className="ml-2">
+              <h2 className=" text-[#002c9b] fontChronicle font-black text-[24px] min-[953px]:text-[30px] h-[55px] pt-[36px] min-[953px]:h-[75px] flex items-center justify-center">Heat & Eat Makes Meals Even Easier</h2>
+              <p className="mb-[10px] text-left text-[#303236] fontCera text-[14px] min-[953px]:text-[18px] leading-6 h-[60px] pt-[36px]">Single-serving meals ready in 5 minutes or less!</p>
+              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white mb-2 rounded-[22.5px] text-[10px] min-[953px]:text-[14px] fontCera tracking-widest h-[30px] w-[100px] min-[953px]:h-[45px] min-[953px]:w-[150px]">
                 ORDER NOW
               </button>
             </div>
-            <img className="w-[672px] h-full absolute top-0 right-0 rounded-[32px]" src="https://media.blueapron.com/hero_images/148/1692974103-21534-0006-4752/image-1500x1000.jpg?width=800" />
+            <div className="">
+              <img className="w-[800px] h-full rounded-[32px] m-auto object-cover" src="https://media.blueapron.com/hero_images/154/1703697292-31012-0002-9731/08c53aae-3f00-4cb9-bfe9-0e9e7d7c0dd0.jpg?width=800" />
+            </div>
           </div>
-          <div className=" bg-[#E6EFFE] relative h-[450px] w-[500px] rounded-[32px]">
-            <div className="absolute top-1/2 positionCenterX ml-10">
-              <h2 className="mb-[10px] text-[#002c9b] fontChronicle text-[30px] leading-9">
-                Heat & Eat Makes <br /> Meals Even Easier
-              </h2>
-              <p className="mb-[10px] text-left text-[#303236] fontCera text-[18px] leading-6">
-                Single-serving meals ready in 5 <br /> minutes or less!
-              </p>
-              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white rounded-[22.5px] text-[14px] fontCera tracking-widest h-[45px] w-[150px]">
+          <div className=" bg-[#E6EFFE] h-auto w-[500px] rounded-[32px]">
+            <div className="ml-2">
+              <h2 className=" text-[#002c9b] fontChronicle text-[24px] min-[953px]:text-[30px] h-[55px] min-[953px]:h-[75px] flex items-center justify-center">Shop Meal Kits</h2>
+              <p className="mb-[10px] text-left text-[#303236] fontCera text-[14px] min-[953px]:text-[18px] leading-6 h-[60px]">No subscription needed.</p>
+              <button onClick={() => navigate('/market/categories/meal-kits')} className="bg-[#002684] text-white mb-2 rounded-[22.5px] text-[10px] min-[953px]:text-[14px] fontCera tracking-widest h-[30px] w-[100px] min-[953px]:h-[45px] min-[953px]:w-[150px]">
                 ORDER NOW
               </button>
             </div>
-            <img className="w-[672px] h-full absolute top-0 right-0 rounded-[32px]" src="https://media.blueapron.com/hero_images/149/1695865653-47-0017-1824/Heat-and-Eat_3-Meals_814.jpeg?width=800" />
+            <div className="">
+              <img className="w-[800px] h-full rounded-[32px] m-auto object-cover" src="https://media.blueapron.com/hero_images/153/1703696477-48-0002-2425/31a83ba7-eed4-4a60-9716-c8c9cecca17a.jpg?width=800" />
+            </div>
           </div>
         </Slider>
       </div>
