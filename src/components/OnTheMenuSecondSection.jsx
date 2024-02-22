@@ -6,8 +6,8 @@ import WeekOfMonth from '../components/WeekOfMonth';
 
 const OnTheMenuSecondSection = ({ activeMenusFirstWeek }) => {
   return (
-    <section className="mt-[50px]">
-      <div className="flex flex-row flex-wrap w-[1180px] m-auto gap-[25px] justify-start items-center mb-[57px]">
+    <section className="mt-[180px]">
+      <div className="flex flex-row flex-wrap w-[440px] min-[800px]:w-[790px] min-[1200px]:w-[1180px] m-auto gap-[25px] justify-center min-[1200px]:justify-start items-center mb-[57px]">
         {activeMenusFirstWeek.map((item, index) => {
           if (activeMenusFirstWeek.length >= 6 && index == 6) {
             return (
