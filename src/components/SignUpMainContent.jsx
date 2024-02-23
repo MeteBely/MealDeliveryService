@@ -51,7 +51,7 @@ const SignUpMainContent = () => {
                 <img src="https://www.larsenseafood.com/wp-content/uploads/salads.svg" alt="" className="w-[78px] h-[90px] " />
                 <div>
                   <h4 className="text-[17px] fontCera text-[#303236] mb-2 font-semibold">Create Magic</h4>
-                  <p className="text-[14px] fontCera text-[#6a6d75] leading-[1.25] mb-[15px]">Following our step-by-step instructions you`ll experience the magic of cooking recipes that our chefs create with your family`s tastes in mind.</p>
+                  <p className="text-[14px] fontCera text-[#6a6d75] leading-[1.25] mb-[15px]">Following our step-by-step instructions you'll experience the magic of cooking recipes that our chefs create with your family's tastes in mind.</p>
                 </div>
               </div>
             </div>
