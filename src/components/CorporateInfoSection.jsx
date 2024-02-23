@@ -1,8 +1,8 @@
 const CorporateInfoSection = () => {
   return (
     <section>
-      <div className="flex flex-row w-[62%] m-auto justify-between gap-16 mt-12 px-[20px]">
-        <div className="text text-[#303236] w-[48%]">
+      <div className="flex flex-col min-[1200px]:flex-row  min-[1200px]:w-[1200px] m-auto items-center min-[1200px]:items-start gap-8 justify-center min-[1200px]:justify-between min-[1200px]:gap-16 mt-12 px-[20px]">
+        <div className="text text-[#303236] text-center min-[1200px]:text-left min-[1200px]:w-[48%]">
           <div className="mb-[40px]">
             <h3 className="mb-[5px] text-[17px] fontChronicle">No Commitment</h3>
             <p className="text-[15px] fontCera font-thin">Get your delivery when it’s convenient for you.</p>

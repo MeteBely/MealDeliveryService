@@ -32,7 +32,7 @@ const CorporateInputSection = () => {
         validationSchema={advancedSchema}
       >
         {({ isSubmitting }) => (
-          <Form className="mt-[60px] w-[62%] m-auto border border-[#d3d5db] flex flex-row gap-[100px] p-[20px]">
+          <Form className="mt-[60px] min-[820px]:w-[800px] m-auto border border-[#d3d5db] flex flex-col min-[820px]:flex-row gap-4 min-[820px]:gap-[100px] p-4">
             <div className="firstFormCol flex flex-col justify-start w-full">
               <div>
                 <h3 className="text-[20px] fontCera text-[#303236] mb-[14px]">Enter contact information</h3>
