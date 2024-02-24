@@ -17,10 +17,10 @@ const SignUpMainContent = () => {
 
   return (
     <section>
-      <div className="signUpContainerDiv">
-        <div className="bg-white w-[950px] h-auto absolute top-1/2 left-1/2 positionCenter pt-[30px] px-[36px] pb-4">
-          <h1 className="text-center text-[28px] mb-2 text-[#002c9b] fontCera font-bold ">Enjoy $110 off across 5 boxes—plus, your first box ships free!</h1>
-          <h2 className="mb-[48px] text-center text-[13px] text-[#6a6d75] fontCera ">
+      <div className="signUpContainerDiv h-[970px] min-[980px]:h-[700px] w-auto min-[1440px]:w-[1400px] m-auto object-cover relative ">
+        <div className="bg-white min-[980px]:w-[950px] w-[450px] h-[925px] min-[980px]:h-auto absolute top-1/2 left-1/2 positionCenter pt-4 min-[980px]:pt-[30px] px-[36px] pb-4">
+          <h1 className="text-center text-[26px] min-[980px]:text-[28px] mb-2 text-[#002c9b] fontCera font-bold ">Enjoy $110 off across 5 boxes—plus, your first box ships free!</h1>
+          <h2 className="min-[980px]:mb-[48px] mb-8 text-center text-[13px] text-[#6a6d75] fontCera ">
             By continuing, you agree to our{' '}
             <a href="" className="underline">
               Terms of Use
@@ -31,8 +31,8 @@ const SignUpMainContent = () => {
             </a>
           </h2>
           <h3 className="text-[#0f346c] text-[13px] fontCera font-semibold mb-1 ">HOW IT WORKS</h3>
-          <div className="flex flex-row gap-[100px]">
-            <div className="flex flex-col w-[40%] justify-center items-center gap-4">
+          <div className="flex flex-col min-[980px]:flex-row gap-4 min-[980px]:gap-[100px]">
+            <div className="flex flex-col min-[980px]:w-[40%] justify-center items-center gap-4">
               <div className="flex flex-row justify-center items-center gap-4">
                 <img src={foodCard} alt="" className="w-[78px] h-[90px]" />
                 <div>
@@ -55,7 +55,7 @@ const SignUpMainContent = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[40%] text-[#303236] ml-8 mb-[70px]">
+            <div className="min-[980px]:w-[40%] w-auto text-[#303236] ml-8 mb-[70px]">
               <Formik initialValues={{ emailAddress: '' }} onSubmit={onSubmit} validationSchema={advancedSchema}>
                 {({ isSubmitting }) => (
                   <Form>

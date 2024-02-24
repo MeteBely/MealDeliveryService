@@ -5,7 +5,7 @@ import box from '../assets/box.png';
 const SignUpBottomSection = () => {
   return (
     <section>
-      <ul className="flex flex-row m-auto w-[50%] gap-[26px] mb-[28px] mt-10">
+      <ul className="flex flex-row m-auto w-[50%] min-[515px]:gap-[26px] gap-4 mb-[28px] mt-10 justify-center">
         <li className="w-[280px] border border-[#E3E6ED] rounded-[4px] px-[25px] text-center text-[#6a6d75]">
           <div className="relative">
             <div className="absolute -top-[8px] left-1/2 positionCenter bg-white z-100 w-[70px]">
