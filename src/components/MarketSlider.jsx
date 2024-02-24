@@ -40,7 +40,7 @@ const MarketSlider = () => {
               </button>
             </div>
             <div className="">
-              <img className="w-[800px] h-full rounded-[32px] m-auto object-cover" src="https://media.blueapron.com/hero_images/154/1703697292-31012-0002-9731/08c53aae-3f00-4cb9-bfe9-0e9e7d7c0dd0.jpg?width=800" />
+              <img className="w-[800px] h-full rounded-[32px] m-auto object-cover" src="https://media.blueapron.com/hero_images/155/1708700411-47-0001-9650/Cavatappi-Beef-Bolognese-Fresh_1843_Horiz.jpg?width=800" />
             </div>
           </div>
           <div className=" bg-[#E6EFFE] h-auto w-[500px] rounded-[32px]">
