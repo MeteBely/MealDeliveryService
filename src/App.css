@@ -70,10 +70,17 @@ body {
 
 .redeemDiv {
   background-image: url('https://media.blueapron.com/assets/learn-more/homepage-hero-c0aa1f5417cb80adfae9725bfa4acf54a5fc53604add3ac801ddeb8e115aa58b.jpg');
+  background-position: center;
   background-position-y: 90px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
+
+/* @media (max-width: 768px) {
+  .redeemDiv {
+    background-position: center center;
+  }
+} */
 
 .CoSaFormInput {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05) inset;
@@ -103,15 +110,9 @@ input[type='checkbox']:checked + label {
 }
 
 .signUpContainerDiv {
-  height: 700px;
-  width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
   background-image: url('https://media.blueapron.com/assets/signup/landing/background-landing-signup.jpg?quality=80&width=1440');
-  object-fit: cover;
-  background-repeat: no-repeat;
+
   background-position: 0 -267px;
-  position: relative;
 }
 
 .selectMenuBox {
