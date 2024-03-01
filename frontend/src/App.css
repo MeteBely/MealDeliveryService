@@ -1,0 +1,126 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'HelveticaNeue', 'Helvetica Neue', 'HelveticaNeueRoman', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'TeXGyreHerosRegular', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('../src/font/CeraPro-Medium.eot');
+  src: url('../src/font/CeraPro-Medium.eot?#iefix') format('embedded-opentype'), url('../src/font/CeraPro-Medium.woff2') format('woff2'), url('../src/font/CeraPro-Medium.woff') format('woff'), url('../src/font/CeraPro-Medium.ttf') format('truetype'), url('../src/font/CeraPro-Medium.svg#CeraPro-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('../src/font/ChronicleDisplay-Bold.eot');
+  src: url('../src/font/ChronicleDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('../src/font/ChronicleDisplay-Bold.woff2') format('woff2'), url('../src/font/ChronicleDisplay-Bold.woff') format('woff'), url('../src/font/ChronicleDisplay-Bold.ttf') format('truetype'), url('../src/font/ChronicleDisplay-Bold.svg#ChronicleDisplay-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.positionCenter {
+  transform: translate(-50%, -50%);
+}
+
+.positionCenterX {
+  transform: translate(0, -50%);
+}
+
+.fontCera {
+  font-family: 'Cera Pro';
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fontChronicle {
+  font-family: 'Chronicle Display';
+  font-weight: bold;
+  font-style: normal;
+}
+
+.appStoreLogo {
+  background-image: url('./assets/appStoreLogo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.playStoreLogo {
+  background-image: url('./assets/playStoreLogo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  box-shadow: 0 2px 4px 0 #00000026;
+}
+
+.giftCard {
+  box-shadow: 0 16px 30px 0 #0003;
+}
+
+.redeemDiv {
+  background-image: url('https://media.blueapron.com/assets/learn-more/homepage-hero-c0aa1f5417cb80adfae9725bfa4acf54a5fc53604add3ac801ddeb8e115aa58b.jpg');
+  background-position: center;
+  background-position-y: 90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* @media (max-width: 768px) {
+  .redeemDiv {
+    background-position: center center;
+  }
+} */
+
+.CoSaFormInput {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05) inset;
+}
+
+.error {
+  color: red;
+}
+
+/** Kendi custom checkbox'ımı yapıyorum. */
+input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b9b9c5;
+  border-radius: 2px;
+}
+
+input[type='checkbox']:checked,
+.tickDiv {
+  background: lightblue url(https://media.blueapron.com/assets/icons-s32e101f38c-188058d364c29a333c05953bf8d24a61c81b104ac42a5a53857fc2d368e42b20.png) no-repeat center;
+  background-position: 0 -212px;
+}
+
+input[type='checkbox']:checked + label {
+  color: #0f346c;
+}
+
+.signUpContainerDiv {
+  background-image: url('https://media.blueapron.com/assets/signup/landing/background-landing-signup.jpg?quality=80&width=1440');
+
+  background-position: 0 -267px;
+}
+
+.selectMenuBox {
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.3);
+}
+
+.monthlyMenuBox {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease-in-out;
+  transition-property: box-shadow, border;
+}
